@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tolu Adejuwon — Financial Operations &amp; Systems Specialist</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#080c0f;--surf:#0d1318;--surf2:#111d24;--bord:rgba(255,255,255,.06);--bord2:rgba(255,255,255,.1);
+  --ac:#4ff8c0;--a2:#ff6b47;--a3:#7b8fff;--a4:#ffcc44;--a5:#e879f9;
+  --tx:#e8edf2;--mu:#5a6470;--mu2:#2a3540;
+  --fd:'Syne',sans-serif;--fm:'DM Mono',monospace;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--tx);font-family:var(--fm);font-weight:300;overflow-x:hidden;cursor:none}
+
+/* CURSOR */
+#cur{position:fixed;width:10px;height:10px;background:var(--ac);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:screen;transition:width .2s,height .2s}
+#crr{position:fixed;width:34px;height:34px;border:1px solid rgba(79,248,192,.28);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .28s,height .28s}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 48px;display:flex;justify-content:space-between;align-items:center;background:linear-gradient(to bottom,rgba(8,12,15,.97),transparent);backdrop-filter:blur(8px)}
+.nl{font-family:var(--fd);font-size:13px;font-weight:800;color:var(--ac);letter-spacing:.12em;text-transform:uppercase}
+.nr{display:flex;gap:24px;list-style:none;align-items:center}
+.nr a{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--mu);text-decoration:none;transition:color .2s}
+.nr a:hover{color:var(--ac)}
+.cvbtn{display:inline-flex;align-items:center;gap:7px;padding:8px 18px;background:var(--ac);color:var(--bg);font-family:var(--fd);font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:background .2s}
+.cvbtn:hover{background:#7fffd4}
+
+/* HERO */
+#hero{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;position:relative;overflow:hidden}
+.hbg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 15% 40%,rgba(79,248,192,.05),transparent 60%),radial-gradient(ellipse 50% 40% at 85% 65%,rgba(123,143,255,.06),transparent 55%)}
+.gbg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.016) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.016) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 70% 70% at 50% 50%,black,transparent)}
+.hc{text-align:center;z-index:2;max-width:860px;padding:0 40px}
+.htag{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ac);margin-bottom:24px;opacity:0;animation:fup .8s .3s forwards}
+.htit{font-family:var(--fd);font-size:clamp(40px,7.5vw,86px);font-weight:800;line-height:.93;letter-spacing:-.025em;margin-bottom:24px;opacity:0;animation:fup .8s .5s forwards}
+.htit .a{color:var(--ac)}.htit .d{color:var(--mu);font-weight:400}
+.hsub{font-size:14px;color:var(--mu);line-height:1.8;max-width:520px;margin:0 auto 40px;opacity:0;animation:fup .8s .7s forwards}
+.hbtns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;opacity:0;animation:fup .8s .9s forwards}
+.hbtn{display:flex;align-items:center;gap:9px;padding:12px 20px;border:1px solid var(--bord);background:rgba(255,255,255,.02);color:var(--tx);font-family:var(--fm);font-size:11px;letter-spacing:.07em;text-transform:uppercase;text-decoration:none;transition:all .3s;position:relative;overflow:hidden}
+.hbtn::before{content:'';position:absolute;inset:0;transform:translateY(101%);transition:transform .3s;z-index:0}
+.hbtn:hover::before{transform:translateY(0)}.hbtn:hover{color:var(--bg)}
+.hbtn span,.hi{position:relative;z-index:1}
+.hbtn.b1::before{background:var(--ac)}.hbtn.b1:hover{border-color:var(--ac)}
+.hbtn.b2::before{background:var(--a3)}.hbtn.b2:hover{border-color:var(--a3)}
+.hbtn.b3::before{background:var(--a2)}.hbtn.b3:hover{border-color:var(--a2)}
+.hbtn.b4::before{background:var(--a4)}.hbtn.b4:hover{border-color:var(--a4);color:var(--bg)}
+.hbtn.b5::before{background:var(--a5)}.hbtn.b5:hover{border-color:var(--a5)}
+
+/* STATS */
+.sbar{display:flex;justify-content:center;flex-wrap:wrap;max-width:1000px;margin:0 auto;border:1px solid var(--bord)}
+.stat{flex:1;min-width:130px;padding:24px 14px;text-align:center;border-right:1px solid var(--bord)}
+.stat:last-child{border-right:none}
+.sn{font-family:var(--fd);font-size:28px;font-weight:800;color:var(--ac);display:block}
+.sl{font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--mu);margin-top:5px;display:block}
+
+/* SECTION BASE */
+section{padding:100px 48px;position:relative}
+.sh{text-align:center;margin-bottom:64px}
+.stag{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ac);margin-bottom:12px;display:block}
+.stit{font-family:var(--fd);font-size:clamp(26px,5vw,48px);font-weight:800;letter-spacing:-.02em}
+.ssub{margin-top:12px;color:var(--mu);font-size:13px;line-height:1.8;max-width:640px;margin-left:auto;margin-right:auto}
+
+/* ABOUT */
+#about{background:var(--surf)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;max-width:1000px;margin:0 auto;align-items:start}
+.about-bio{font-size:14px;line-height:1.95;color:rgba(232,237,242,.72)}
+.about-bio p{margin-bottom:18px}
+.about-bio p:last-child{margin-bottom:0}
+.about-bio strong{color:var(--ac);font-weight:400}
+.about-right{display:flex;flex-direction:column;gap:28px}
+.about-block{border:1px solid var(--bord);padding:22px}
+.about-block-title{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--ac);margin-bottom:14px}
+.interest-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.int-item{display:flex;align-items:center;gap:9px;font-size:12px;color:rgba(232,237,242,.65)}
+.int-ico{font-size:16px;flex-shrink:0}
+.val-list{display:flex;flex-direction:column;gap:8px}
+.val-item{font-size:12px;color:rgba(232,237,242,.65);padding-left:14px;border-left:2px solid var(--ac);line-height:1.55}
+
+/* TIMELINE */
+.tlw{max-width:980px;margin:0 auto;position:relative}
+.tll{position:absolute;left:180px;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,transparent,var(--ac) 5%,var(--a3) 30%,var(--a4) 55%,var(--a2) 80%,var(--a5) 95%,transparent)}
+.tc{display:grid;grid-template-columns:170px 1fr;gap:0 44px;position:relative;opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.tc.vis{opacity:1;transform:translateY(0)}
+.tcl{text-align:right;padding-top:4px;padding-bottom:34px;position:relative}
+.tcd{font-size:11px;letter-spacing:.07em;color:var(--mu);line-height:1.5;margin-bottom:8px}
+.tct{display:inline-block;font-size:9px;letter-spacing:.14em;text-transform:uppercase;padding:2px 8px;border:1px solid currentColor}
+.tct.job{color:var(--ac)}.tct.fail{color:var(--a2)}.tct.exp{color:var(--a3)}.tct.edu{color:var(--a4)}.tct.vol{color:var(--a5)}
+.tcdot{position:absolute;right:-6px;top:5px;width:11px;height:11px;border-radius:50%;box-shadow:0 0 14px currentColor}
+.tcdot.job{background:var(--ac);color:var(--ac)}.tcdot.fail{background:var(--a2);color:var(--a2)}.tcdot.exp{background:var(--a3);color:var(--a3)}.tcdot.edu{background:var(--a4);color:var(--a4)}.tcdot.vol{background:var(--a5);color:var(--a5)}
+.tcr{padding-bottom:34px}
+.tctit{font-family:var(--fd);font-size:20px;font-weight:700;margin-bottom:4px;line-height:1.2;letter-spacing:-.01em}
+.tcco{font-size:12px;color:var(--mu);margin-bottom:10px;letter-spacing:.04em}
+.tcbod{font-size:13px;line-height:1.85;color:rgba(232,237,242,.56);max-width:600px;margin-bottom:12px}
+.skch{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:8px}
+.sk{font-size:9px;letter-spacing:.08em;text-transform:uppercase;padding:3px 9px;border:1px solid var(--bord);color:var(--mu);background:rgba(255,255,255,.02)}
+.sk.nw{border-color:rgba(79,248,192,.28);color:var(--ac);background:rgba(79,248,192,.04)}
+.tcln{font-size:11px;color:rgba(232,237,242,.28);font-style:italic;padding-left:12px;border-left:2px solid var(--mu2);margin-top:4px}
+.ulk{display:inline-flex;align-items:center;gap:7px;padding:6px 12px;font-size:11px;margin-top:10px}
+.ulk.job{background:rgba(79,248,192,.04);border:1px solid rgba(79,248,192,.18);color:var(--ac)}
+.ulk.fail{background:rgba(255,107,71,.04);border:1px solid rgba(255,107,71,.18);color:var(--a2)}
+.ulk.exp{background:rgba(123,143,255,.05);border:1px solid rgba(123,143,255,.2);color:var(--a3)}
+.ulk.edu{background:rgba(255,204,68,.04);border:1px solid rgba(255,204,68,.18);color:var(--a4)}
+
+/* SKILL GRAPH */
+#skillCanvas{display:block;margin:0 auto;max-width:100%}
+
+/* NODE POPUP — cutout card below canvas */
+.node-popup{max-width:900px;margin:20px auto 0;background:var(--surf);border:1px solid var(--bord);opacity:0;transform:translateY(10px);transition:opacity .3s,transform .3s;pointer-events:none}
+.node-popup.on{opacity:1;transform:translateY(0);pointer-events:auto}
+.node-popup::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;transition:background .3s}
+.np-inner{padding:28px 32px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;position:relative}
+.np-name{grid-column:1/-1;font-family:var(--fd);font-size:22px;font-weight:800;margin-bottom:4px}
+.np-section{display:flex;flex-direction:column;gap:4px}
+.np-label{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--mu);margin-bottom:3px}
+.np-value{font-size:12px;line-height:1.65;color:rgba(232,237,242,.75)}
+.np-header{display:flex;justify-content:space-between;align-items:flex-end;grid-column:1/-1;border-bottom:1px solid var(--bord);padding-bottom:16px;margin-bottom:4px}
+.np-pct-hero{font-family:var(--fd);font-size:18px;font-weight:800;color:var(--ac);letter-spacing:-.02em;white-space:nowrap}
+.np-bar-wrap{height:4px;background:rgba(255,255,255,.03);overflow:hidden;width:100%;margin-top:10px}
+.np-bar-fill{height:4px;width:0%;display:block;transition:width .8s cubic-bezier(.22,1,.36,1)}
+.np-insight-box{grid-column:1/-1;background:rgba(255,255,255,.02);padding:20px;border-left:2px solid var(--ac);margin-top:6px}
+/* Edge connections list */
+.np-conns{grid-column:1/-1;border-top:1px solid var(--bord);padding-top:18px;margin-top:4px}
+.np-conns-title{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--mu);margin-bottom:12px}
+.conn-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px}
+.conn-card{padding:12px 14px;border:1px solid var(--bord);background:rgba(255,255,255,.02);cursor:pointer;transition:all .22s;position:relative}
+.conn-card:hover{border-color:rgba(255,255,255,.18);background:rgba(255,255,255,.04)}
+.conn-card.act{border-color:rgba(79,248,192,.5);background:rgba(79,248,192,.05)}
+.conn-target{font-family:var(--fd);font-size:12px;font-weight:700;margin-bottom:4px}
+.conn-lbl{font-size:9px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:5px}
+.conn-desc{font-size:11px;line-height:1.55;color:rgba(232,237,242,.48)}
+.conn-close{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--mu);text-align:center;cursor:pointer;padding:15px;border-top:1px solid var(--bord);background:var(--surf2)}
+.conn-close:hover{color:var(--tx)}
+
+/* PROJECTS */
+.pg{display:grid;grid-template-columns:repeat(auto-fit,minmax(265px,1fr));gap:2px;max-width:1100px;margin:0 auto}
+.pc{position:relative;background:var(--surf);padding:32px;overflow:hidden;cursor:pointer;transition:transform .4s}
+.pc::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(79,248,192,.04),transparent);opacity:0;transition:opacity .4s}
+.pc:hover::before{opacity:1}.pc:hover{transform:translateY(-3px)}
+.pn{font-size:10px;letter-spacing:.18em;color:var(--mu);margin-bottom:14px}
+.ptag{display:inline-block;font-size:9px;letter-spacing:.12em;text-transform:uppercase;padding:3px 9px;border:1px solid currentColor;margin-bottom:11px}
+.ptag.ec{color:var(--ac)}.ptag.au{color:var(--a3)}.ptag.br{color:var(--a2)}.ptag.la{color:var(--a4)}
+.pt{font-family:var(--fd);font-size:17px;font-weight:700;margin-bottom:9px;line-height:1.25}
+.pb{font-size:12px;line-height:1.75;color:rgba(232,237,242,.46);margin-bottom:6px}
+.pi{font-size:12px;line-height:1.75;color:rgba(232,237,242,.68);font-style:italic;margin-bottom:17px}
+.ptools{display:flex;gap:5px;flex-wrap:wrap}
+.ptool{font-size:9px;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border:1px solid var(--bord);color:var(--mu)}
+.pgw{position:absolute;bottom:-40px;right:-40px;width:100px;height:100px;border-radius:50%;filter:blur(36px);opacity:0;transition:opacity .5s}
+.pc:hover .pgw{opacity:1}
+
+/* FOOTER */
+footer{padding:50px 48px;border-top:1px solid var(--bord);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
+.fnm{font-family:var(--fd);font-size:15px;font-weight:700;margin-bottom:4px}
+.fct{font-size:12px;color:var(--mu);line-height:1.8}
+.fct a{color:var(--mu);text-decoration:none}.fct a:hover{color:var(--ac)}
+.fcta{display:flex;gap:11px;align-items:center}
+.bp{display:inline-flex;align-items:center;gap:7px;padding:12px 26px;background:var(--ac);color:var(--bg);font-family:var(--fd);font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:all .2s}
+.bp:hover{background:#7fffd4;transform:translateY(-2px)}
+.bg2{display:inline-flex;align-items:center;gap:7px;padding:12px 26px;border:1px solid var(--bord);color:var(--mu);font-family:var(--fd);font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:all .2s}
+.bg2:hover{border-color:var(--mu);color:var(--tx)}
+
+/* CONTACT */
+#contact{background:var(--surf)}
+.contact-wrap{max-width:760px;margin:0 auto;display:grid;grid-template-columns:1fr 1.6fr;gap:56px;align-items:start}
+.contact-info{display:flex;flex-direction:column;gap:22px}
+.ci-item{display:flex;flex-direction:column;gap:4px}
+.ci-label{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--mu)}
+.ci-value{font-size:13px;color:var(--tx)}
+.ci-value a{color:var(--ac);text-decoration:none;transition:color .2s}
+.ci-value a:hover{color:#7fffd4}
+.ci-note{font-size:12px;color:rgba(232,237,242,.45);line-height:1.7;margin-top:8px;border-left:2px solid var(--mu2);padding-left:12px}
+.cform{display:flex;flex-direction:column;gap:14px}
+.cf-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.cf-field{display:flex;flex-direction:column;gap:6px}
+.cf-field label{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--mu)}
+.cf-field input,.cf-field textarea,.cf-field select{background:var(--bg);border:1px solid var(--bord);color:var(--tx);font-family:var(--fm);font-size:12px;padding:12px 14px;outline:none;transition:border-color .2s;width:100%;resize:none}
+.cf-field input:focus,.cf-field textarea:focus,.cf-field select:focus{border-color:rgba(79,248,192,.4)}
+.cf-field input::placeholder,.cf-field textarea::placeholder{color:var(--mu)}
+.cf-field textarea{min-height:120px}
+.cf-field select option{background:var(--surf);color:var(--tx)}
+.cf-submit{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:4px}
+.cf-btn{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;background:var(--ac);color:var(--bg);font-family:var(--fd);font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;border:none;cursor:pointer;transition:background .2s}
+.cf-btn:hover{background:#7fffd4}
+.cf-note{font-size:10px;color:var(--mu);line-height:1.6;max-width:200px}
+.cf-success{display:none;padding:14px 18px;background:rgba(79,248,192,.06);border:1px solid rgba(79,248,192,.2);color:var(--ac);font-size:12px;line-height:1.6}
+.cf-success.show{display:block}
+@media(max-width:720px){
+  .contact-wrap{grid-template-columns:1fr}
+  .cf-row{grid-template-columns:1fr}
+}
+
+/* UTILS */
+@keyframes fup{to{opacity:1;transform:translateY(0)}}
+@keyframes flt{0%{transform:translate(0,0)}25%{transform:translate(16px,-25px)}50%{transform:translate(-7px,-42px)}75%{transform:translate(-22px,-14px)}100%{transform:translate(0,0)}}
+::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--mu)}
+.rev{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.rev.vis{opacity:1;transform:translateY(0)}
+.fn{position:fixed;bottom:24px;left:24px;width:8px;height:8px;background:var(--a2);border-radius:50%;opacity:.2;cursor:pointer;transition:all .3s;z-index:200}
+.fn:hover{opacity:1;transform:scale(3);box-shadow:0 0 16px var(--a2)}
+.fmsg{position:fixed;bottom:46px;left:44px;background:var(--surf);border:1px solid var(--a2);padding:12px 15px;font-size:11px;color:var(--a2);max-width:210px;line-height:1.6;opacity:0;pointer-events:none;transition:opacity .3s;z-index:200}
+.fn:hover~.fmsg{opacity:1}
+@media(max-width:720px){
+  nav{padding:12px 16px}.nr{display:none}
+  section{padding:70px 16px}
+  .tll{left:0}.tc{grid-template-columns:1fr;padding-left:20px}.tcl{text-align:left;padding-bottom:6px}.tcdot{right:auto;left:-26px}
+  footer{flex-direction:column;text-align:center}
+  .sbar{flex-direction:column}.stat{border-right:none;border-bottom:1px solid var(--bord)}
+  .about-grid{grid-template-columns:1fr}
+  .np-inner{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div id="cur"></div><div id="crr"></div>
+<div class="fn"></div>
+<div class="fmsg">🎮 Easter egg found.<br>You look under the surface — that's exactly how I approach every system.</div>
+
+<nav>
+  <div class="nl">Tolu Adejuwon</div>
+  <ul class="nr">
+    <li><a href="#about">About</a></li>
+    <li><a href="#journey">Journey</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="Tolu_Adejuwon_CV.docx" download class="cvbtn">↓ Download CV</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hbg"></div><div class="gbg"></div>
+  <div style="position:absolute;width:3px;height:3px;background:var(--ac);opacity:.4;top:22%;left:14%;border-radius:50%;animation:flt 13s linear infinite"></div>
+  <div style="position:absolute;width:4px;height:4px;background:var(--a3);opacity:.3;top:60%;left:82%;border-radius:50%;animation:flt 19s linear infinite;animation-delay:-7s"></div>
+  <div style="position:absolute;width:2px;height:2px;background:var(--a4);opacity:.5;top:38%;left:72%;border-radius:50%;animation:flt 16s linear infinite;animation-delay:-4s"></div>
+  <div class="hc">
+    <div class="htag">✦ Financial Operations · FX & Trade Ops · Process Design · Scrum · Toronto, ON</div>
+    <h1 class="htit"><div>Financial Operations</div><div class="a">&amp; Systems</div><div class="d">Specialist.</div></h1>
+    <p class="hsub">7+ years in institutional banking and process automation. Currently Senior FX Analyst at a Big Five Canadian Bank — delivering precision at scale across multi-currency operations, chargeback systems, and financial process design.</p>
+    <div class="hbtns">
+      <a href="#about" class="hbtn b1"><span class="hi">👤</span><span>About Me</span></a>
+      <a href="#journey" class="hbtn b2"><span class="hi">🧭</span><span>Journey</span></a>
+      <a href="#skills" class="hbtn b3"><span class="hi">🧠</span><span>Skill Graph</span></a>
+      <a href="#contact" class="hbtn b4"><span class="hi">✉</span><span>Get In Touch</span></a>
+      <a href="Tolu_Adejuwon_CV.docx" download class="hbtn b5"><span class="hi">↓</span><span>Download CV</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section style="padding-top:0;padding-bottom:0">
+  <div class="sbar rev">
+    <div class="stat"><span class="sn">7+</span><span class="sl">Years Experience</span></div>
+    <div class="stat"><span class="sn">99.5%</span><span class="sl">Payment Accuracy</span></div>
+    <div class="stat"><span class="sn">50%</span><span class="sl">Recon Time Cut</span></div>
+    <div class="stat"><span class="sn">5h+</span><span class="sl">Saved/wk via Automation</span></div>
+    <div class="stat"><span class="sn">4</span><span class="sl">Roles at Big Five Bank</span></div>
+    <div class="stat"><span class="sn">15+</span><span class="sl">Currencies Reconciled</span></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="sh rev">
+    <span class="stag">✦ The Person Behind the Work</span>
+    <h2 class="stit">About Me</h2>
+  </div>
+  <div class="about-grid rev">
+    <div class="about-bio">
+      <p>I'm Tolu — a <strong>Senior FX Analyst at a Big Five Canadian Bank</strong> with 7+ years of institutional financial operations experience. I specialise in high-accuracy, high-volume environments: multi-currency FX reconciliation, Visa dispute management, fraud analysis, and the process design that makes complex operations scale without breaking.</p>
+      <p>My career started in Lagos — supervising construction projects, reconciling sales accounts for Nigerian Breweries, processing government payment vouchers, and selling Ford vehicles in a showroom that taught me the most important lesson of my professional life: <strong>diagnose the real problem before you open a laptop</strong>.</p>
+      <p>That discipline followed me to Toronto and into a Big Five Canadian Bank — through chargebacks, Visa pre-arbitration, fraud analysis, and now FX settlements across 15+ currencies. Four progressive roles inside the same institution — Chargeback Analyst, Business Systems Analyst, Fraud Analyst, Senior FX Analyst — each building directly on the one before. I don't just operate financial systems — I redesign the ones that leak.</p>
+      <p>I hold a <strong>Certified Scrum Master (CSM)</strong> certification and post-graduate certificates in International Business Management (Georgian College) and Project Management (Humber College). The PM path started at Georgian, where I did a co-op placement, delivered SOPs, and documented system walkthroughs — that experience pointed me toward Humber's IT Project Management program, which led directly to the Scrum certification and how I now run every project.</p>
+      <p>Outside work, I care deeply about <strong>teaching people</strong> and improving lives through technology. I follow AI and IoT closely — not as industry trends but as tools that genuinely change what's possible for individuals. I play video games not to escape but because good games are the best systems design you'll encounter outside an engineering department.</p>
+    </div>
+    <div class="about-right">
+      <div class="about-block rev">
+        <div class="about-block-title">Interests &amp; Beyond Work</div>
+        <div class="interest-grid">
+          <div class="int-item"><span class="int-ico">🤖</span><span>AI &amp; Machine Learning</span></div>
+          <div class="int-item"><span class="int-ico">🌐</span><span>IoT &amp; Connected Systems</span></div>
+          <div class="int-item"><span class="int-ico">🎮</span><span>Video Games &amp; Game Design</span></div>
+          <div class="int-item"><span class="int-ico">💡</span><span>Emerging Technology</span></div>
+          <div class="int-item"><span class="int-ico">🧑‍🏫</span><span>Teaching &amp; Mentoring</span></div>
+          <div class="int-item"><span class="int-ico">🌍</span><span>Improving Lives via Tech</span></div>
+          <div class="int-item"><span class="int-ico">📷</span><span>Photography &amp; Visual Art</span></div>
+          <div class="int-item"><span class="int-ico">🏗️</span><span>Construction &amp; Sustainability</span></div>
+        </div>
+      </div>
+      <div class="about-block rev">
+        <div class="about-block-title">How I Work</div>
+        <div class="val-list">
+          <div class="val-item">Diagnose the constraint before touching a tool</div>
+          <div class="val-item">Document everything so it runs without you</div>
+          <div class="val-item">Ask "what does this look like at 10x?" before committing</div>
+          <div class="val-item">Precision at volume is discipline, not talent</div>
+          <div class="val-item">Every manual process is waiting to be automated</div>
+        </div>
+      </div>
+      <div class="about-block rev">
+        <div class="about-block-title">Credentials</div>
+        <div class="val-list">
+          <div class="val-item">Certified Scrum Master (CSM)</div>
+          <div class="val-item">PG Certificate — International Business Management, Georgian College</div>
+          <div class="val-item">PG Certificate — IT Project Management, Humber College</div>
+          <div class="val-item">BSc Economics (Second Class Honours), Bowen University</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNEY — reverse chronological -->
+<section id="journey">
+  <div class="sh rev">
+    <span class="stag">✦ Chronological Career Map</span>
+    <h2 class="stit">The Full Journey</h2>
+    <p class="ssub">Present → 2008. Every role, every skill unlocked, every connection forward. <span style="color:var(--ac)">Teal = newly unlocked</span> at that chapter, grey = carried forward.</p>
+  </div>
+  <div class="tlw">
+    <div class="tll"></div>
+
+    
+        <!-- 2023 FX Analyst -->
+    <div class="tc"><div class="tcl"><div class="tcd">May 2023 – Present</div><div class="tct job">Big Five Bank</div><div class="tcdot job"></div></div>
+    <div class="tcr"><h3 class="tctit">Senior FX Analyst — led MCP project, cut reconciliation 50%</h3><div class="tcco">Big Five Canadian Bank · Toronto, ON</div>
+    <p class="tcbod">Promoted into FX and Global Money Transfers. Multi-currency reconciliation across 15+ currencies, high-volume client disputes, trade settlements for Prepaid Visa and Mastercard. Led the MCP (Multi-Currency Payments) internal project: built trackers cutting reconciliation from 60 to 30 minutes, same-day investigation turnaround. Took on co-brand card operations. 99.5% accuracy. Trained team members and created knowledge transfer documentation.</p>
+    <div class="skch"><span class="sk">Systems thinking</span><span class="sk">SOP creation</span><span class="sk">Team training</span><span class="sk">Process optimisation</span><span class="sk nw">WSS</span><span class="sk nw">IWS</span><span class="sk nw">MCP</span><span class="sk nw">FX settlements</span><span class="sk nw">Multi-currency reconciliation</span><span class="sk nw">PostEdge</span></div>
+    <div class="ulk job">⬡ Unlocked: Full financial systems fluency at institutional scale — leading projects, not just executing them</div></div></div>
+
+    
+        <!-- Fraud Analyst -->
+    <div class="tc"><div class="tcl"><div class="tcd">Aug 2022 – May 2023</div><div class="tct job">Big Five Bank</div><div class="tcdot job"></div></div>
+    <div class="tcr"><h3 class="tctit">Fraud Analyst — 99% accuracy, 20+ cases/day, $2,000+ threshold</h3><div class="tcco">Big Five Canadian Bank · Toronto, ON</div>
+    <p class="tcbod">High-stakes, high-volume fraud detection across ATM, online, and branch channels. 20+ cases per day, each over $2,000. Maintained audit logs, ensured regulatory compliance, conducted root cause analyses. Updated 500+ customer account records. 99% accuracy rate — sharpened the ability to move fast without sacrificing precision.</p>
+    <div class="skch"><span class="sk">Systems thinking</span><span class="sk">QA</span><span class="sk">SOP creation</span><span class="sk nw">PRM</span><span class="sk nw">COINS</span><span class="sk nw">Transaction monitoring</span><span class="sk nw">Regulatory compliance</span><span class="sk nw">Audit logs</span></div>
+    <div class="ulk job">⬡ Unlocked: Precision at scale under pressure — accuracy as a repeatable discipline</div></div></div>
+
+    
+        <!-- BSA -->
+    <div class="tc"><div class="tcl"><div class="tcd">Jan 2019 – Jul 2022</div><div class="tct job">Big Five Bank</div><div class="tcdot job"></div></div>
+    <div class="tcr"><h3 class="tctit">Associate Business Systems Analyst — Visa pre-arbitration SME</h3><div class="tcco">Big Five Canadian Bank · Toronto, ON</div>
+    <p class="tcbod">Subject matter expert on Visa pre-arbitration — part investigator, part systems analyst. Researched evidence, owned liable cases, ensured funds recovery. Collaborated with fraud and loss management to build SOPs reducing errors by 30%. Conducted QA reviews. Shifted from thinking about individual cases to the systems producing them.</p>
+    <div class="skch"><span class="sk">Chargeback processing</span><span class="sk">SOP creation</span><span class="sk">Systems thinking</span><span class="sk nw">Visa pre-arbitration</span><span class="sk nw">Funds recovery</span><span class="sk nw">QA reviews</span><span class="sk nw">ECRM / Salesforce</span><span class="sk nw">Stakeholder collaboration</span></div>
+    <div class="ulk job">⬡ Unlocked: Systems-level process design — improving the machinery, not just operating it</div></div></div>
+
+    <!-- Chargeback -->
+    <div class="tc"><div class="tcl"><div class="tcd">May 2018 – Jan 2019</div><div class="tct job">Big Five Bank</div><div class="tcdot job"></div></div>
+    <div class="tcr"><h3 class="tctit">Chargeback Analyst — 500+ cases/month, 20% faster processing</h3><div class="tcco">Big Five Canadian Bank · Toronto, ON</div>
+    <p class="tcbod">Arrived in Canada and entered high-volume financial operations immediately. Processed 500+ chargebacks monthly, surpassed targets, cut processing time by 20% through process improvements. Trained new hires — 15% increase in team productivity. First systematic application of writing processes so no one has to figure it out blind again.</p>
+    <div class="skch"><span class="sk">Payment processing</span><span class="sk">Financial reconciliation</span><span class="sk">Institutional compliance</span><span class="sk nw">Chargeback processing</span><span class="sk nw">SOP creation</span><span class="sk nw">Team training</span><span class="sk nw">Process optimisation</span></div>
+    <div class="tcln">→ SOP creation here led to 30% error reduction in the next role — same discipline, broader scope</div></div></div>
+
+    <!-- Humber -->
+    <div class="tc"><div class="tcl"><div class="tcd">2017 – 2018</div><div class="tct edu">Education</div><div class="tcdot edu"></div></div>
+    <div class="tcr"><h3 class="tctit">PG Certificate — IT Project Management, Humber College</h3><div class="tcco">Humber College · Toronto, ON</div>
+    <p class="tcbod">Direct continuation from Georgian College's International Business Management program. Georgian gave the broad business foundation and co-op delivery experience — Humber took it into IT project management specifically. Covered Agile methodologies, system delivery lifecycles, stakeholder management, and risk frameworks. Led directly to Scrum Master certification and how every project has been managed since.</p>
+    <div class="skch"><span class="sk">Project management</span><span class="sk">SOP writing</span><span class="sk">System walkthroughs</span><span class="sk nw">Agile / Scrum</span><span class="sk nw">IT project delivery</span><span class="sk nw">Stakeholder management</span><span class="sk nw">Risk frameworks</span></div>
+    <div class="ulk edu">⬡ Unlocked: Formal project management framework → Certified Scrum Master (CSM)</div></div></div>
+
+    <!-- Georgian -->
+    <div class="tc"><div class="tcl"><div class="tcd">2015 – 2017</div><div class="tct edu">Education</div><div class="tcdot edu"></div></div>
+    <div class="tcr"><h3 class="tctit">PG Certificate — International Business Management, Georgian College</h3><div class="tcco">Georgian College · Ontario</div>
+    <p class="tcbod">Post-graduate program in International Business Management. Completed a co-op placement where I delivered real project outcomes — wrote SOPs, documented system walkthroughs, and handed over documented processes to teams. That practical delivery experience confirmed that project management was a natural fit, and pointed directly toward Humber's IT PM program.</p>
+    <div class="skch"><span class="sk">Client management</span><span class="sk">Needs analysis</span><span class="sk">Business strategy</span><span class="sk nw">International business</span><span class="sk nw">Co-op delivery</span><span class="sk nw">SOP documentation</span><span class="sk nw">System walkthroughs</span></div>
+    <div class="tcln">→ Co-op delivery confirmed the PM instinct — led directly to Humber IT Project Management, then Scrum Master</div></div></div>
+
+    
+        <!-- R.T. Briscoe -->
+    <div class="tc"><div class="tcl"><div class="tcd">Feb – Nov 2014</div><div class="tct job">Sales</div><div class="tcdot job"></div></div>
+    <div class="tcr"><h3 class="tctit">Sales Executive — Briscoe Ford Automobiles</h3><div class="tcco">R.T. Briscoe Nigeria PLC · Ikeja, Lagos</div>
+    <p class="tcbod">Sold Ford vehicles through showroom and exhibition consultations. Full sales cycle: needs analysis, demonstration, negotiation, payment, delivery, after-sales handover. Completed management sales reports. The critical lesson — diagnose the actual need before proposing anything — became the discipline that defines every consulting engagement since.</p>
+    <div class="skch"><span class="sk">Systems thinking</span><span class="sk">Financial documentation</span><span class="sk nw">Client relationship management</span><span class="sk nw">Needs analysis</span><span class="sk nw">Sales negotiation</span><span class="sk nw">Reporting</span></div>
+    <div class="tcln">→ "Understand the need before proposing a solution" — still the first step of every project</div></div></div>
+
+    <!-- NYSC -->
+    <div class="tc"><div class="tcl"><div class="tcd">Nov 2013 – Feb 2014</div><div class="tct job">Public Service</div><div class="tcdot job"></div></div>
+    <div class="tcr"><h3 class="tctit">NYSC — Budgeting Department, Government Administration</h3><div class="tcco">Igando-Ikotun LCDA · Lagos</div>
+    <p class="tcbod">National service in a government budgeting department. Received and dispatched payment vouchers, maintained dispatch logs, submitted to accounts, and prepared pre-payment inspection certificates. First formal exposure to institutional payment workflows and accountability chains.</p>
+    <div class="skch"><span class="sk">Systems thinking</span><span class="sk">Reconciliation</span><span class="sk nw">Payment processing</span><span class="sk nw">Financial documentation</span><span class="sk nw">Institutional compliance</span></div>
+    <div class="tcln">→ Voucher processing and payment verification mapped directly onto chargeback and payment ops at a leading Canadian bank</div></div></div>
+
+    <!-- Bowen University -->
+    <div class="tc"><div class="tcl"><div class="tcd">2009 – 2013</div><div class="tct edu">Education</div><div class="tcdot edu"></div></div>
+    <div class="tcr"><h3 class="tctit">BSc Economics — learning to see systems</h3><div class="tcco">Bowen University · Iwo, Osun State, Nigeria</div>
+    <p class="tcbod">Economics taught me that everything is a system: incentives, constraints, feedback loops, and leaks. That mental model followed into fraud detection, FX operations, and automation. Second class honours — and a permanent habit of asking why a system behaves the way it does.</p>
+    <div class="skch"><span class="sk">Reliability</span><span class="sk nw">Systems thinking</span><span class="sk nw">Analytical frameworks</span><span class="sk nw">Root cause reasoning</span></div>
+    <div class="ulk edu">⬡ Unlocked: The mental model that underpins every role that followed</div></div></div>
+
+    <!-- Julie One -->
+    <div class="tc"><div class="tcl"><div class="tcd">2010</div><div class="tct job">Operations</div><div class="tcdot job"></div></div>
+    <div class="tcr"><h3 class="tctit">Supervisor — Construction &amp; Product Distribution</h3><div class="tcco">Julie One Nigeria Limited · Lagos</div>
+    <p class="tcbod">While still studying: supervised school building construction (material control) and managed Nigerian Breweries product distribution — stock-taking, customer credit follow-ups, and reconciling sales accounts. First direct encounter with inventory systems and financial reconciliation as daily disciplines.</p>
+    <div class="skch"><span class="sk">Systems thinking</span><span class="sk nw">Inventory management</span><span class="sk nw">Logistics</span><span class="sk nw">Sales reconciliation</span><span class="sk nw">Supervision</span></div>
+    <div class="tcln">→ Sales reconciliation here mapped directly onto payment and FX reconciliation at the bank nearly a decade later</div></div></div>
+
+    <!-- Volunteer -->
+    <div class="tc"><div class="tcl"><div class="tcd">2008</div><div class="tct vol">Volunteer</div><div class="tcdot vol"></div></div>
+    <div class="tcr"><h3 class="tctit">First service outside myself</h3><div class="tcco">Arrows of God Orphanage · Lekki, Lagos</div>
+    <p class="tcbod">Volunteered at an orphanage — cleaning, tutoring, and caring for children. First structured experience with responsibility and showing up for a community beyond your own.</p>
+    <div class="skch"><span class="sk nw">Teamwork</span><span class="sk nw">Reliability</span><span class="sk nw">Community responsibility</span></div>
+    <div class="tcln">→ The habit of showing up and following through that has defined every role since</div></div></div>
+
+  </div>
+</section>
+
+<!-- SKILL GRAPH -->
+<section id="skills">
+  <div class="sh rev">
+    <span class="stag">✦ Core Competencies</span>
+    <h2 class="stit">Six Institutional Skill Clusters</h2>
+    <p class="ssub">Built across 7+ years inside a Big Five Canadian Bank. Click any node to see the evidence, tools, and connections behind each capability.</p>
+  </div>
+  <canvas id="skillCanvas" width="900" height="500"></canvas>
+  <!-- Cutout popup below canvas -->
+  <div class="node-popup" id="nodePopup">
+    <div class="np-inner">
+      <div class="np-header">
+        <div class="np-name" id="npName"></div>
+        <div id="npPct" class="np-pct-hero"></div>
+      </div>
+      <div class="np-section">
+        <div class="np-label">Institutional Origin</div>
+        <div class="np-value" id="npOrigin" style="color:var(--tx);font-weight:400"></div>
+      </div>
+      <div class="np-section">
+        <div class="np-label">Systems &amp; Tools</div>
+        <div class="np-value" id="npUsed" style="color:var(--ac);font-family:var(--fm);font-size:11px;letter-spacing:.04em"></div>
+      </div>
+      <div class="np-section">
+        <div class="np-label">Competency Level</div>
+        <div class="np-bar-wrap" style="margin-top:12px;background:rgba(255,255,255,.03)"><div class="np-bar-fill" id="npBar"></div></div>
+      </div>
+      <div class="np-insight-box">
+        <div class="np-label" style="margin-bottom:8px">Strategic Impact</div>
+        <div class="np-value" id="npInsight" style="font-size:13px;line-height:1.7;color:rgba(232,237,242,.8)"></div>
+      </div>
+      <div class="np-conns">
+        <div class="np-conns-title">Connections — click any card to highlight that link on the graph</div>
+        <div class="conn-grid" id="connGrid"></div>
+      </div>
+    </div>
+    <div class="conn-close" id="popupClose" onclick="closePopup()">✕ Close Specification</div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="sh rev">
+    <span class="stag">✦ Open to Opportunities</span>
+    <h2 class="stit">Get In Touch</h2>
+    <p class="ssub">Open to senior financial operations, FX, risk, or project delivery roles in Toronto. Available for direct conversation — or download the CV above to share with your team.</p>
+  </div>
+  <div class="contact-wrap rev">
+    <div class="contact-info">
+      <div class="ci-item">
+        <div class="ci-label">Email</div>
+        <div class="ci-value"><a href="mailto:tolulopeadejuwon@gmail.com">tolulopeadejuwon@gmail.com</a></div>
+      </div>
+      <div class="ci-item">
+        <div class="ci-label">Phone</div>
+        <div class="ci-value"><a href="tel:7059704667">705-970-4667</a></div>
+      </div>
+      <div class="ci-item">
+        <div class="ci-label">Location</div>
+        <div class="ci-value">Toronto, Ontario, Canada</div>
+      </div>
+      <div class="ci-item">
+        <div class="ci-label">CV / Resume</div>
+        <div class="ci-value"><a href="Tolu_Adejuwon_CV.docx" download>&#8595; Download full CV (.docx)</a></div>
+      </div>
+      <p class="ci-note">Response within 24 hours. Happy to speak directly or connect via email— please include the role or organisation in your message.</p>
+    </div>
+    <div class="cform">
+      <div class="cf-row">
+        <div class="cf-field">
+          <label for="cf-name">Your Name</label>
+          <input type="text" id="cf-name" placeholder="Jane Smith" autocomplete="off">
+        </div>
+        <div class="cf-field">
+          <label for="cf-email">Your Email</label>
+          <input type="email" id="cf-email" placeholder="jane@company.com" autocomplete="off">
+        </div>
+      </div>
+      <div class="cf-field">
+        <label for="cf-role">Role or Opportunity <span style="color:var(--mu);font-size:10px">(optional but helpful)</span></label>
+        <input type="text" id="cf-role" placeholder="e.g. Senior FX Analyst · RBC · Permanent" autocomplete="off">
+      </div>
+      <div class="cf-field">
+        <label for="cf-msg">Message</label>
+        <textarea id="cf-msg" placeholder="Introduce yourself, share the role details, or just reach out. I read every message."></textarea>
+      </div>
+      <div class="cf-submit">
+        <button class="cf-btn" onclick="sendForm()">Send Message &#8594;</button>
+        <p class="cf-note">Opens your email client with the message pre-filled. No data is stored.</p>
+      </div>
+      <div class="cf-success" id="cfSuccess">
+        &#10003; Your email client should have opened with the message ready to send. If it did not, email <a href="mailto:tolulopeadejuwon@gmail.com" style="color:var(--ac)">tolulopeadejuwon@gmail.com</a> directly.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="fnm">Tolulope John Adejuwon</div>
+    <div class="fct">Toronto, ON &nbsp;&middot;&nbsp; <a href="mailto:tolulopeadejuwon@gmail.com">tolulopeadejuwon@gmail.com</a> &nbsp;&middot;&nbsp; <a href="tel:7059704667">705-970-4667</a><br>
+    CSM &nbsp;&middot;&nbsp; BSc Economics &nbsp;&middot;&nbsp; PG: International Business &amp; IT Project Management</div>
+  </div>
+  <div class="fcta">
+    <a href="Tolu_Adejuwon_CV.docx" download class="bg2">&#8595; Download CV</a>
+    <a href="#contact" class="bp">Get In Touch &#8594;</a>
+  </div>
+</footer>
+<script>
+// ── CURSOR ────────────────────────────────────────────────────────────────
+var cur = document.getElementById('cur'), crr = document.getElementById('crr');
+var mx = 0, my = 0, rx = 0, ry = 0;
+document.addEventListener('mousemove', function(e){ mx=e.clientX; my=e.clientY; cur.style.left=mx+'px'; cur.style.top=my+'px'; });
+(function raf(){ rx+=(mx-rx)*.12; ry+=(my-ry)*.12; crr.style.left=rx+'px'; crr.style.top=ry+'px'; requestAnimationFrame(raf); })();
+document.querySelectorAll('a,button,.pc,.conn-card').forEach(function(el){
+  el.addEventListener('mouseenter', function(){ cur.style.width='5px'; cur.style.height='5px'; crr.style.width='50px'; crr.style.height='50px'; });
+  el.addEventListener('mouseleave', function(){ cur.style.width='10px'; cur.style.height='10px'; crr.style.width='34px'; crr.style.height='34px'; });
+});
+
+// ── SCROLL REVEAL ─────────────────────────────────────────────────────────
+var obs = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){ if(e.isIntersecting) e.target.classList.add('vis'); });
+}, {threshold:0.06});
+document.querySelectorAll('.rev,.tc').forEach(function(el){ obs.observe(el); });
+
+// ── SKILL DATA (RECRUITER-OPTIMISED) ─────────────────────────────────────
+var SK = [
+  // CLUSTER A: INSTITUTIONAL OPERATIONS
+  { id:0, label:'FX & Trade Ops', x:0.15, y:0.30, color:'#4ff8c0', level:0.98,
+    pct:'99.5% Accuracy',
+    origin:'Senior FX Analyst — Big Five Canadian Bank (2023–Present)',
+    used:'WSS, PostEdge, IWS, MCP Project Lead, Multi-currency settlements (15+ currencies)',
+    insight:'Managed high-volume FX settlements and trade reconciliation with near-perfect accuracy at institutional scale.' },
+
+  { id:1, label:'Process Optimization', x:0.38, y:0.14, color:'#4ff8c0', level:0.92,
+    pct:'50% Faster Reconciliation',
+    origin:'MCP Internal Project Lead — Big Five Canadian Bank',
+    used:'Custom Excel tracking systems, SOP development, workflow redesign, team training',
+    insight:'Reduced daily reconciliation from 60 to 30 minutes. SOP programme delivered 30% error reduction in chargeback operations.' },
+
+  // CLUSTER B: RISK & COMPLIANCE
+  { id:2, label:'Fraud & Risk Analysis', x:0.80, y:0.22, color:'#ff6b47', level:0.95,
+    pct:'99% Accuracy · 20+ Cases/Day',
+    origin:'Fraud Analyst — Big Five Canadian Bank (2022–2023)',
+    used:'PRM, COINS, AML compliance, root cause analysis, audit log maintenance',
+    insight:'Maintained 99% accuracy on high-value fraud cases ($2,000+ threshold) across ATM, online and branch channels.' },
+
+  { id:3, label:'Visa Pre-Arbitration', x:0.88, y:0.54, color:'#ff6b47', level:0.90,
+    pct:'30% Error Reduction',
+    origin:'Associate Business Systems Analyst — Big Five Canadian Bank (2019–2022)',
+    used:'ECRM (Salesforce), Visa dispute rules, funds recovery, QA reviews, SOP creation',
+    insight:'Institutional SME for Visa pre-arbitration — built evidence workflows and SOPs that cut operational inconsistencies by 30%.' },
+
+  // CLUSTER C: DELIVERY & ARCHITECTURE
+  { id:4, label:'Scrum & Agile PM', x:0.50, y:0.80, color:'#7b8fff', level:0.88,
+    pct:'Certified Scrum Master (CSM)',
+    origin:'CSM Certification + IT Project Management PG — Humber College (2017–2018)',
+    used:'Agile sprint frameworks, SDLC, stakeholder management, MCP project delivery',
+    insight:'Applied Scrum velocity and structured delivery to institutional operations — every internal project managed as a sprint.' },
+
+  { id:5, label:'Systems & Automation', x:0.25, y:0.76, color:'#7b8fff', level:0.86,
+    pct:'5h+ Saved / Week Per Output',
+    origin:'Recognised after years watching capable teams repeat identical manual steps without improvement',
+    used:'No-code pipelines (Make.com), Excel automation, process mapping, internal tracker architecture',
+    insight:'Identifying manual leaks in institutional and operational systems — then replacing them with documented, repeatable builds.' }
+];
+
+var EDGES = [
+  { a:0, b:1,
+    label:'Operations → Efficiency',
+    desc:'Deep FX and trade operations knowledge is what makes process redesign precise — you cannot optimise what you have not fully operated. The MCP project cut reconciliation time by 50% because the problem was understood before any solution was built.' },
+  { a:1, b:5,
+    label:'Documentation → Automation',
+    desc:'Every automation starts as a written process. SOPs created at chargeback and BSA level became the blueprints for tracker builds and pipeline architecture. Process design is the prerequisite — automation is the execution layer.' },
+  { a:2, b:3,
+    label:'Fraud → Resolution',
+    desc:'Fraud detection insight feeds directly into Visa pre-arbitration — understanding how fraud originates informs how disputes are built and won. Both roles operate inside the same institutional risk intelligence loop.' },
+  { a:0, b:4,
+    label:'Volume → Structure',
+    desc:'Managing 15+ currency settlements at institutional volume requires Agile project discipline. The CSM framework brought sprint structure and milestone tracking to what would otherwise be reactive, high-error daily operations.' },
+  { a:1, b:4,
+    label:'Process → Project',
+    desc:'Operational process design and project management reinforce each other: both require scoping constraints, documenting steps, defining done, and building for handover. Georgian co-op and Humber IT PM formalised this connection.' },
+  { a:4, b:5,
+    label:'Agile → Build',
+    desc:'Automation projects are managed using Scrum methodology — sprint planning, backlog, review, retrospective. The MCP tracker and Telegram pipeline were both scoped, iterated, and delivered as structured projects, not ad hoc builds.' },
+  { a:0, b:2,
+    label:'Settlements → Risk',
+    desc:'Trade operations and fraud risk share an underlying analytical logic: both require pattern recognition across high-volume data and rapid, accurate decision-making under institutional pressure.' },
+  { a:3, b:1,
+    label:'Disputes → SOPs',
+    desc:'Visa pre-arbitration experience revealed exactly where inconsistency enters the dispute process — which became the basis for SOPs that cut errors by 30%. Knowing the failure mode precisely is how you design the right fix.' }
+];
+
+// ── CANVAS ────────────────────────────────────────────────────────────────
+var canvas = document.getElementById('skillCanvas');
+var ctx    = canvas.getContext('2d');
+var DPR    = window.devicePixelRatio || 1;
+
+function resizeCanvas(){
+  var mw = Math.min(900, window.innerWidth - 40);
+  var mh = Math.round(mw * 0.5);
+  canvas.style.width = mw+'px'; canvas.style.height = mh+'px';
+  canvas.width  = mw * DPR;
+  canvas.height = mh * DPR;
+  ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+}
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
+
+var hovNode=null, selNode=null, focusEdge=null, pulse=0;
+
+function dW(){ return canvas.width  / DPR; }
+function dH(){ return canvas.height / DPR; }
+function gp(s){ return { x: s.x * dW(), y: s.y * dH() }; }
+
+function getEdge(a, b){
+  for(var i=0; i<EDGES.length; i++){
+    var e = EDGES[i];
+    if((e.a===a && e.b===b) || (e.a===b && e.b===a)) return e;
+  }
+  return null;
+}
+function eMid(e){ var f=gp(SK[e.a]), t=gp(SK[e.b]); return { x:(f.x+t.x)/2, y:(f.y+t.y)/2 }; }
+function isConn(id){ return selNode ? getEdge(selNode.id, id) !== null : false; }
+
+function draw(){
+  ctx.clearRect(0, 0, dW(), dH());
+  pulse += 0.018;
+
+  // edges
+  for(var i=0; i<EDGES.length; i++){
+    var e = EDGES[i];
+    var f = gp(SK[e.a]), t = gp(SK[e.b]);
+    var active  = selNode && (selNode.id===e.a || selNode.id===e.b);
+    var isFocus = focusEdge && focusEdge.a===e.a && focusEdge.b===e.b;
+    var alpha   = selNode ? (active ? 0.55 : 0.022) : 0.07;
+
+    ctx.beginPath(); ctx.moveTo(f.x, f.y); ctx.lineTo(t.x, t.y);
+    ctx.strokeStyle = (active ? SK[e.a].color : '#ffffff') + Math.round(alpha*255).toString(16).padStart(2,'0');
+    ctx.lineWidth   = isFocus ? 2.5 : active ? 1.5 : 0.7;
+    ctx.stroke();
+
+    if(active){
+      var tt  = (Math.sin(pulse*2 + e.a*0.7) + 1) / 2;
+      var ppx = f.x + (t.x-f.x)*tt, ppy = f.y + (t.y-f.y)*tt;
+      ctx.beginPath(); ctx.arc(ppx, ppy, isFocus ? 3.5 : 2, 0, Math.PI*2);
+      ctx.fillStyle = isFocus ? '#fff' : SK[e.a].color; ctx.fill();
+
+      // edge label pill
+      var mid = eMid(e), lbl = e.label;
+      ctx.font = '300 9px DM Mono,monospace';
+      var tw = ctx.measureText(lbl).width + 16, th = 17;
+      var ex = mid.x - tw/2, ey = mid.y - th/2, rr = 3;
+      ctx.fillStyle   = isFocus ? 'rgba(8,12,15,0.97)' : 'rgba(8,12,15,0.88)';
+      ctx.strokeStyle = isFocus ? 'rgba(255,255,255,0.4)' : SK[e.a].color + '55';
+      ctx.lineWidth   = isFocus ? 1.5 : 1;
+      ctx.beginPath();
+      ctx.moveTo(ex+rr, ey); ctx.lineTo(ex+tw-rr, ey);
+      ctx.quadraticCurveTo(ex+tw, ey, ex+tw, ey+rr);
+      ctx.lineTo(ex+tw, ey+th-rr); ctx.quadraticCurveTo(ex+tw, ey+th, ex+tw-rr, ey+th);
+      ctx.lineTo(ex+rr, ey+th); ctx.quadraticCurveTo(ex, ey+th, ex, ey+th-rr);
+      ctx.lineTo(ex, ey+rr); ctx.quadraticCurveTo(ex, ey, ex+rr, ey);
+      ctx.closePath(); ctx.fill(); ctx.stroke();
+      ctx.fillStyle = 'rgba(232,237,242,' + (isFocus ? '0.95' : '0.72') + ')';
+      ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+      ctx.fillText(lbl, mid.x, mid.y);
+    }
+  }
+
+  // nodes
+  for(var j=0; j<SK.length; j++){
+    var s  = SK[j], p = gp(s);
+    var iS = selNode===s, iH = hovNode===s;
+    var conn = isConn(s.id), dim = selNode && !iS && !conn;
+    var r = iS ? 12 : iH ? 9 : 7;
+    var gr= iS ? 40 : iH ? 28 : 19;
+
+    var grd = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, gr);
+    grd.addColorStop(0, s.color + (dim ? '0a' : iS ? '55' : '28'));
+    grd.addColorStop(1, s.color + '00');
+    ctx.beginPath(); ctx.arc(p.x, p.y, gr, 0, Math.PI*2);
+    ctx.fillStyle = grd; ctx.fill();
+
+    if(iS){
+      var pr = 16 + Math.sin(pulse*3) * 4;
+      ctx.beginPath(); ctx.arc(p.x, p.y, pr, 0, Math.PI*2);
+      ctx.strokeStyle = s.color + '44'; ctx.lineWidth = 1; ctx.stroke();
+    }
+
+    ctx.beginPath(); ctx.arc(p.x, p.y, r, 0, Math.PI*2);
+    ctx.fillStyle = dim ? '#111820' : s.color + (iS ? 'ff' : 'cc'); ctx.fill();
+    ctx.beginPath(); ctx.arc(p.x, p.y, r*0.35, 0, Math.PI*2);
+    ctx.fillStyle = dim ? '#1a2530' : iS ? '#080c0f' : s.color + '80'; ctx.fill();
+
+    // label — split on ' & ' or ' — ' for two-line rendering
+    ctx.font = (iS ? '600' : '400') + ' ' + (iS ? 12 : 10) + 'px DM Mono,monospace';
+    ctx.fillStyle   = dim ? '#1e2a35' : iS ? s.color : 'rgba(232,237,242,0.62)';
+    ctx.textAlign   = 'center';
+    ctx.textBaseline= 'top';
+    var parts = s.label.indexOf(' & ') !== -1
+      ? [s.label.split(' & ')[0]+' &', s.label.split(' & ')[1]]
+      : [s.label];
+    for(var li=0; li<parts.length; li++){
+      ctx.fillText(parts[li], p.x, p.y + r + 7 + li*13);
+    }
+  }
+
+  requestAnimationFrame(draw);
+}
+draw();
+
+// ── CANVAS EVENTS ─────────────────────────────────────────────────────────
+function cxy(ev){ var r = canvas.getBoundingClientRect(); return { x: ev.clientX-r.left, y: ev.clientY-r.top }; }
+
+canvas.addEventListener('mousemove', function(ev){
+  var p = cxy(ev); hovNode = null;
+  for(var i=0; i<SK.length; i++){
+    var pos = gp(SK[i]);
+    if(Math.hypot(p.x-pos.x, p.y-pos.y) < 24){ hovNode = SK[i]; break; }
+  }
+  canvas.style.cursor = hovNode ? 'pointer' : 'default';
+});
+
+canvas.addEventListener('click', function(ev){
+  var p = cxy(ev), clicked = null;
+  for(var i=0; i<SK.length; i++){
+    var pos = gp(SK[i]);
+    if(Math.hypot(p.x-pos.x, p.y-pos.y) < 24){ clicked = SK[i]; break; }
+  }
+  if(clicked){
+    if(selNode === clicked){ closePopup(); return; }
+    selNode = clicked; focusEdge = null;
+    openPopup(selNode);
+  } else {
+    closePopup();
+  }
+});
+
+// ── POPUP ─────────────────────────────────────────────────────────────────
+function openPopup(s){
+  var popup = document.getElementById('nodePopup');
+  popup.style.borderTopColor = s.color;
+  popup.style.borderTopWidth = '2px';
+
+  document.getElementById('npName').textContent    = s.label;
+  document.getElementById('npName').style.color    = s.color;
+  document.getElementById('npOrigin').textContent  = s.origin;
+  document.getElementById('npUsed').textContent    = s.used;
+  document.getElementById('npInsight').textContent = s.insight;
+  document.getElementById('npPct').textContent     = s.pct;
+
+  var bar = document.getElementById('npBar');
+  bar.style.background = s.color;
+  bar.style.width      = '0%';
+  setTimeout(function(){ bar.style.width = (s.level * 100) + '%'; }, 60);
+
+  // Build connection cards
+  var grid = document.getElementById('connGrid');
+  grid.innerHTML = '';
+  for(var k=0; k<EDGES.length; k++){
+    var edge = EDGES[k];
+    if(edge.a !== s.id && edge.b !== s.id) continue;
+    var otherId = edge.a === s.id ? edge.b : edge.a;
+    var other   = SK[otherId];
+    var card    = document.createElement('div');
+    card.className = 'conn-card';
+    card.innerHTML =
+      '<div class="conn-target" style="color:' + other.color + '">' + other.label + '</div>' +
+      '<div class="conn-lbl"   style="color:' + other.color + '99">' + edge.label + '</div>' +
+      '<div class="conn-desc">'                                       + edge.desc  + '</div>';
+    (function(ce, cc){
+      cc.addEventListener('click', function(){
+        focusEdge = (focusEdge === ce) ? null : ce;
+        document.querySelectorAll('.conn-card').forEach(function(c){ c.classList.remove('act'); });
+        if(focusEdge) cc.classList.add('act');
+      });
+    })(edge, card);
+    grid.appendChild(card);
+  }
+
+  popup.classList.add('on');
+  setTimeout(function(){ popup.scrollIntoView({ behavior:'smooth', block:'nearest' }); }, 100);
+}
+
+function closePopup(){
+  selNode = null; focusEdge = null;
+  document.getElementById('nodePopup').classList.remove('on');
+  document.querySelectorAll('.conn-card').forEach(function(c){ c.classList.remove('act'); });
+}
+
+// ── CONTACT FORM ─────────────────────────────────────────────────────────
+function sendForm(){
+  var name  = document.getElementById('cf-name').value.trim();
+  var email = document.getElementById('cf-email').value.trim();
+  var role  = document.getElementById('cf-role')  ? document.getElementById('cf-role').value.trim()  : '';
+  var msg   = document.getElementById('cf-msg').value.trim();
+
+  if(!name)  { alert('Please enter your name.'); return; }
+  if(!email || !email.includes('@')){ alert('Please enter a valid email address.'); return; }
+  if(!msg)   { alert('Please enter a message.'); return; }
+
+  var to  = 'tolulopeadejuwon@gmail.com';
+  var sub = encodeURIComponent((role ? role : 'Recruitment Enquiry') + ' — Tolu Adejuwon');
+  var nl  = '%0A';
+  var bd  = 'Hi Tolu,' + nl + nl + encodeURIComponent(msg) + nl + nl + '---';
+  bd += nl + 'From: '     + encodeURIComponent(name);
+  bd += nl + 'Reply to: ' + encodeURIComponent(email);
+  if(role) bd += nl + 'Role / opportunity: ' + encodeURIComponent(role);
+
+  window.location.href = 'mailto:' + to + '?subject=' + sub + '&body=' + bd;
+  document.getElementById('cfSuccess').classList.add('show');
+}
+</script>
+</body>
+</html>
