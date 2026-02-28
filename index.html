@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tolu Adejuwon — Financial Operations &amp; Systems Specialist</title>
+<title>Tolu Adejuwon Financial Operations &amp; Systems Specialist</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&display=swap');
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#080c0f;--surf:#0d1318;--surf2:#111d24;--bord:rgba(255,255,255,.06);--bord2:rgba(255,255,255,.1);
-  --ac:#4ff8c0;--a2:#ff6b47;--a3:#7b8fff;--a4:#ffcc44;--a5:#e879f9;
-  --tx:#e8edf2;--mu:#5a6470;--mu2:#2a3540;
-  --fd:'Syne',sans-serif;--fm:'DM Mono',monospace;
+ --bg:#080c0f;--surf:#0d1318;--surf2:#111d24;--bord:rgba(255,255,255,.06);--bord2:rgba(255,255,255,.1);
+ --ac:#4ff8c0;--a2:#ff6b47;--a3:#7b8fff;--a4:#ffcc44;--a5:#e879f9;
+ --tx:#e8edf2;--mu:#5a6470;--mu2:#2a3540;
+ --fd:'Syne',sans-serif;--fm:'DM Mono',monospace;
 }
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--tx);font-family:var(--fm);font-weight:300;overflow-x:hidden;cursor:none}
@@ -86,11 +86,11 @@ section{padding:100px 48px;position:relative}
 
 /* TIMELINE */
 .tlw{max-width:980px;margin:0 auto;position:relative}
-.tll{position:absolute;left:180px;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,transparent,var(--ac) 5%,var(--a3) 30%,var(--a4) 55%,var(--a2) 80%,var(--a5) 95%,transparent)}
-.tc{display:grid;grid-template-columns:170px 1fr;gap:0 44px;position:relative;opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.tll{position:absolute;left:200px;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,transparent,var(--ac) 5%,var(--a3) 30%,var(--a4) 55%,var(--a2) 80%,var(--a5) 95%,transparent)}
+.tc{display:grid;grid-template-columns:200px 1fr;gap:0 48px;position:relative;opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
 .tc.vis{opacity:1;transform:translateY(0)}
-.tcl{text-align:right;padding-top:4px;padding-bottom:34px;position:relative}
-.tcd{font-size:11px;letter-spacing:.07em;color:var(--mu);line-height:1.5;margin-bottom:8px}
+.tcl{text-align:right;padding-top:4px;padding-bottom:34px;padding-right:8px;position:relative;min-width:0}
+.tcd{font-size:11px;letter-spacing:.04em;color:var(--mu);line-height:1.6;margin-bottom:8px;word-break:normal;white-space:normal}
 .tct{display:inline-block;font-size:9px;letter-spacing:.14em;text-transform:uppercase;padding:2px 8px;border:1px solid currentColor}
 .tct.job{color:var(--ac)}.tct.fail{color:var(--a2)}.tct.exp{color:var(--a3)}.tct.edu{color:var(--a4)}.tct.vol{color:var(--a5)}
 .tcdot{position:absolute;right:-6px;top:5px;width:11px;height:11px;border-radius:50%;box-shadow:0 0 14px currentColor}
@@ -112,7 +112,7 @@ section{padding:100px 48px;position:relative}
 /* SKILL GRAPH */
 #skillCanvas{display:block;margin:0 auto;max-width:100%}
 
-/* NODE POPUP — cutout card below canvas */
+/* NODE POPUP cutout card below canvas */
 .node-popup{max-width:900px;margin:20px auto 0;background:var(--surf);border:1px solid var(--bord);opacity:0;transform:translateY(10px);transition:opacity .3s,transform .3s;pointer-events:none}
 .node-popup.on{opacity:1;transform:translateY(0);pointer-events:auto}
 .node-popup::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;transition:background .3s}
@@ -193,87 +193,87 @@ footer{padding:50px 48px;border-top:1px solid var(--bord);display:flex;justify-c
 .cf-success.show{display:block}
 /* ── RESPONSIVE ─────────────────────────────────────────────────────────── */
 
-/* Tablet — 481px to 900px */
+/* Tablet 481px to 900px */
 @media(max-width:900px){
-  section{padding:80px 32px}
-  .about-grid{gap:40px}
-  .tlw{max-width:100%}
-  .np-inner{grid-template-columns:1fr 1fr;padding:22px 24px}
-  .contact-wrap{gap:36px}
-  .hbtns{gap:8px}
-  .hbtn{padding:10px 14px;font-size:10px}
+ section{padding:80px 32px}
+ .about-grid{gap:40px}
+ .tlw{max-width:100%}
+ .np-inner{grid-template-columns:1fr 1fr;padding:22px 24px}
+ .contact-wrap{gap:36px}
+ .hbtns{gap:8px}
+ .hbtn{padding:10px 14px;font-size:10px}
 }
 
-/* Mobile — 480px and below */
+/* Mobile 480px and below */
 @media(max-width:480px){
-  nav{padding:12px 16px}
-  .nr{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(8,12,15,.97);flex-direction:column;align-items:center;justify-content:center;gap:28px;z-index:150;backdrop-filter:blur(12px)}
-  .nr.open{display:flex}
-  .nr a{font-size:16px;letter-spacing:.12em}
-  .nr .cvbtn{padding:14px 32px;font-size:12px}
-  .nav-hamburger{display:flex}
-  .nl{font-size:11px}
-  section{padding:60px 16px}
-  .sh{margin-bottom:40px}
+ nav{padding:12px 16px}
+ .nr{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(8,12,15,.97);flex-direction:column;align-items:center;justify-content:center;gap:28px;z-index:150;backdrop-filter:blur(12px)}
+ .nr.open{display:flex}
+ .nr a{font-size:16px;letter-spacing:.12em}
+ .nr .cvbtn{padding:14px 32px;font-size:12px}
+ .nav-hamburger{display:flex}
+ .nl{font-size:11px}
+ section{padding:60px 16px}
+ .sh{margin-bottom:40px}
 
-  /* Hero */
-  .hc{padding:0 16px}
-  .htit{font-size:clamp(32px,10vw,48px);line-height:1.05}
-  .hsub{font-size:13px;max-width:100%}
-  .hbtns{flex-direction:column;align-items:stretch;gap:8px;padding:0 8px}
-  .hbtn{justify-content:center;padding:12px 16px;font-size:11px}
+ /* Hero */
+ .hc{padding:0 16px}
+ .htit{font-size:clamp(32px,10vw,48px);line-height:1.05}
+ .hsub{font-size:13px;max-width:100%}
+ .hbtns{flex-direction:column;align-items:stretch;gap:8px;padding:0 8px}
+ .hbtn{justify-content:center;padding:12px 16px;font-size:11px}
 
-  /* Stats bar */
-  .sbar{flex-direction:column}
-  .stat{border-right:none;border-bottom:1px solid var(--bord);padding:18px 14px}
-  .stat:last-child{border-bottom:none}
-  .sn{font-size:24px}
+ /* Stats bar */
+ .sbar{flex-direction:column}
+ .stat{border-right:none;border-bottom:1px solid var(--bord);padding:18px 14px}
+ .stat:last-child{border-bottom:none}
+ .sn{font-size:24px}
 
-  /* About */
-  .about-grid{grid-template-columns:1fr;gap:32px}
-  .interest-grid{grid-template-columns:1fr 1fr}
-  .about-bio{font-size:13px}
+ /* About */
+ .about-grid{grid-template-columns:1fr;gap:32px}
+ .interest-grid{grid-template-columns:1fr 1fr}
+ .about-bio{font-size:13px}
 
-  /* Timeline */
-  .tll{left:0;display:none}
-  .tc{grid-template-columns:1fr;padding-left:0;gap:0}
-  .tcl{text-align:left;padding-bottom:6px;padding-left:0}
-  .tcdot{display:none}
-  .tctit{font-size:17px}
-  .tcbod{font-size:12px;max-width:100%}
-  .skch{gap:4px}
-  .sk{font-size:8px;padding:2px 7px}
+ /* Timeline */
+ .tll{left:0;display:none}
+ .tc{grid-template-columns:1fr;padding-left:0;gap:0}
+ .tcl{text-align:left;padding-bottom:6px;padding-left:0}
+ .tcdot{display:none}
+ .tctit{font-size:17px}
+ .tcbod{font-size:12px;max-width:100%}
+ .skch{gap:4px}
+ .sk{font-size:8px;padding:2px 7px}
 
-  /* Skill popup */
-  .np-inner{grid-template-columns:1fr;padding:16px}
-  .np-header{flex-direction:column;align-items:flex-start;gap:6px}
-  .np-pct-hero{font-size:14px}
-  .np-insight-box{padding:14px}
-  .conn-grid{grid-template-columns:1fr}
+ /* Skill popup */
+ .np-inner{grid-template-columns:1fr;padding:16px}
+ .np-header{flex-direction:column;align-items:flex-start;gap:6px}
+ .np-pct-hero{font-size:14px}
+ .np-insight-box{padding:14px}
+ .conn-grid{grid-template-columns:1fr}
 
-  /* Contact */
-  .contact-wrap{grid-template-columns:1fr;gap:32px}
-  .cf-row{grid-template-columns:1fr}
-  .cf-submit{flex-direction:column;align-items:stretch}
-  .cf-btn{text-align:center;justify-content:center}
-  .cf-note{max-width:100%}
+ /* Contact */
+ .contact-wrap{grid-template-columns:1fr;gap:32px}
+ .cf-row{grid-template-columns:1fr}
+ .cf-submit{flex-direction:column;align-items:stretch}
+ .cf-btn{text-align:center;justify-content:center}
+ .cf-note{max-width:100%}
 
-  /* Footer */
-  footer{flex-direction:column;text-align:center;padding:36px 16px;gap:24px}
-  .fcta{justify-content:center;flex-wrap:wrap}
-  .fct{font-size:11px}
+ /* Footer */
+ footer{flex-direction:column;text-align:center;padding:36px 16px;gap:24px}
+ .fcta{justify-content:center;flex-wrap:wrap}
+ .fct{font-size:11px}
 }
 
 /* Ensure canvas never overflows */
 #skillCanvas{max-width:100%;height:auto}
 
-/* Touch devices — disable hover-only effects that feel broken */
+/* Touch devices disable hover-only effects that feel broken */
 @media(hover:none){
-  body{cursor:auto}
-  #cur,#crr{display:none}
-  .hbtn::before{display:none}
-  .hbtn:hover{color:var(--tx)}
-  .pc:hover{transform:none}
+ body{cursor:auto}
+ #cur,#crr{display:none}
+ .hbtn::before{display:none}
+ .hbtn:hover{color:var(--tx)}
+ .pc:hover{transform:none}
 }
 
 /* UTILS */
@@ -292,324 +292,316 @@ footer{padding:50px 48px;border-top:1px solid var(--bord);display:flex;justify-c
 <body>
 <div id="cur"></div><div id="crr"></div>
 <div class="fn"></div>
-<div class="fmsg">🎮 Easter egg found.<br>You look under the surface — that's exactly how I approach every system.</div>
+<div class="fmsg">🎮 Easter egg found.<br>You look under the surface that's exactly how I approach every system.</div>
 
 <nav>
-  <div class="nl">Tolu Adejuwon</div>
-  <ul class="nr" id="navLinks">
-    <li><a href="#about">About</a></li>
-    <li><a href="#journey">Journey</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="Tolu_Adejuwon_CV.docx" download class="cvbtn">↓ Download CV</a></li>
-  </ul>
-  <button class="nav-hamburger" id="navToggle" aria-label="Toggle navigation">
-    <span></span><span></span><span></span>
-  </button>
+ <div class="nl">Tolu Adejuwon</div>
+ <ul class="nr" id="navLinks">
+ <li><a href="#about">About</a></li>
+ <li><a href="#journey">Journey</a></li>
+ <li><a href="#skills">Skills</a></li>
+ <li><a href="#contact">Contact</a></li>
+ <li><a href="Tolu_Adejuwon_CV.docx" download class="cvbtn">↓ Download CV</a></li>
+ </ul>
+ <button class="nav-hamburger" id="navToggle" aria-label="Toggle navigation">
+ <span></span><span></span><span></span>
+ </button>
 </nav>
 
 <!-- HERO -->
 <section id="hero">
-  <div class="hbg"></div><div class="gbg"></div>
-  <div style="position:absolute;width:3px;height:3px;background:var(--ac);opacity:.4;top:22%;left:14%;border-radius:50%;animation:flt 13s linear infinite"></div>
-  <div style="position:absolute;width:4px;height:4px;background:var(--a3);opacity:.3;top:60%;left:82%;border-radius:50%;animation:flt 19s linear infinite;animation-delay:-7s"></div>
-  <div style="position:absolute;width:2px;height:2px;background:var(--a4);opacity:.5;top:38%;left:72%;border-radius:50%;animation:flt 16s linear infinite;animation-delay:-4s"></div>
-  <div class="hc">
-    <div class="htag">✦ Financial Operations · FX & Trade Ops · Process Design · Scrum · Toronto, ON</div>
-    <h1 class="htit"><div>Financial Operations</div><div class="a">&amp; Systems</div><div class="d">Specialist.</div></h1>
-    <p class="hsub">7+ years in institutional banking and process automation. Currently Senior FX Analyst at a Big Five Canadian Bank — delivering precision at scale across multi-currency operations, chargeback systems, and financial process design.</p>
-    <div class="hbtns">
-      <a href="#about" class="hbtn b1"><span class="hi">👤</span><span>About Me</span></a>
-      <a href="#journey" class="hbtn b2"><span class="hi">🧭</span><span>Journey</span></a>
-      <a href="#skills" class="hbtn b3"><span class="hi">🧠</span><span>Skill Graph</span></a>
-      <a href="#contact" class="hbtn b4"><span class="hi">✉</span><span>Get In Touch</span></a>
-      <a href="Tolu_Adejuwon_CV.docx" download class="hbtn b5"><span class="hi">↓</span><span>Download CV</span></a>
-    </div>
-  </div>
+ <div class="hbg"></div><div class="gbg"></div>
+ <div style="position:absolute;width:3px;height:3px;background:var(--ac);opacity:.4;top:22%;left:14%;border-radius:50%;animation:flt 13s linear infinite"></div>
+ <div style="position:absolute;width:4px;height:4px;background:var(--a3);opacity:.3;top:60%;left:82%;border-radius:50%;animation:flt 19s linear infinite;animation-delay:-7s"></div>
+ <div style="position:absolute;width:2px;height:2px;background:var(--a4);opacity:.5;top:38%;left:72%;border-radius:50%;animation:flt 16s linear infinite;animation-delay:-4s"></div>
+ <div class="hc">
+ <div class="htag">✦ Financial Operations · FX & Trade Ops · Process Design · Scrum · Toronto, ON</div>
+ <h1 class="htit"><div>Financial Operations</div><div class="a">&amp; Systems</div><div class="d">Specialist.</div></h1>
+ <p class="hsub">7+ years in institutional banking and process automation. Currently Senior FX Analyst at a Big Five Canadian Bank, delivering precision at scale across multi-currency operations, chargeback systems, and financial process design.</p>
+ <div class="hbtns">
+ <a href="#about" class="hbtn b1"><span class="hi">👤</span><span>About Me</span></a>
+ <a href="#journey" class="hbtn b2"><span class="hi">🧭</span><span>Journey</span></a>
+ <a href="#skills" class="hbtn b3"><span class="hi">🧠</span><span>Skill Graph</span></a>
+ <a href="#contact" class="hbtn b4"><span class="hi">✉</span><span>Get In Touch</span></a>
+ <a href="Tolu_Adejuwon_CV.docx" download class="hbtn b5"><span class="hi">↓</span><span>Download CV</span></a>
+ </div>
+ </div>
 </section>
 
 <!-- STATS -->
 <section style="padding-top:0;padding-bottom:0">
-  <div class="sbar rev">
-    <div class="stat"><span class="sn">7+</span><span class="sl">Years Experience</span></div>
-    <div class="stat"><span class="sn">99.5%</span><span class="sl">Payment Accuracy</span></div>
-    <div class="stat"><span class="sn">50%</span><span class="sl">Recon Time Cut</span></div>
-    <div class="stat"><span class="sn">5h+</span><span class="sl">Saved/wk via Automation</span></div>
-    <div class="stat"><span class="sn">4</span><span class="sl">Roles at Big Five Bank</span></div>
-    <div class="stat"><span class="sn">15+</span><span class="sl">Currencies Reconciled</span></div>
-  </div>
+ <div class="sbar rev">
+ <div class="stat"><span class="sn">7+</span><span class="sl">Years Experience</span></div>
+ <div class="stat"><span class="sn">99.5%</span><span class="sl">Payment Accuracy</span></div>
+ <div class="stat"><span class="sn">50%</span><span class="sl">Recon Time Cut</span></div>
+ <div class="stat"><span class="sn">5h+</span><span class="sl">Saved/wk via Automation</span></div>
+ <div class="stat"><span class="sn">4</span><span class="sl">Roles at Big Five Bank</span></div>
+ <div class="stat"><span class="sn">15+</span><span class="sl">Currencies Reconciled</span></div>
+ </div>
 </section>
 
 <!-- ABOUT -->
 <section id="about">
-  <div class="sh rev">
-    <span class="stag">✦ The Person Behind the Work</span>
-    <h2 class="stit">About Me</h2>
-  </div>
-  <div class="about-grid rev">
-    <div class="about-bio">
-      <p>I'm Tolu — a <strong>Senior FX Analyst at a Big Five Canadian Bank</strong> with 7+ years of institutional financial operations experience. I specialise in high-accuracy, high-volume environments: multi-currency FX reconciliation, Visa dispute management, fraud analysis, and the process design that makes complex operations scale without breaking.</p>
-      <p>My career started in Lagos — supervising construction projects, reconciling sales accounts for Nigerian Breweries, processing government payment vouchers, and selling Ford vehicles in a showroom that taught me the most important lesson of my professional life: <strong>diagnose the real problem before you open a laptop</strong>.</p>
-      <p>That discipline followed me to Toronto and into a Big Five Canadian Bank — through chargebacks, Visa pre-arbitration, fraud analysis, and now FX settlements across 15+ currencies. Four progressive roles inside the same institution — Chargeback Analyst, Business Systems Analyst, Fraud Analyst, Senior FX Analyst — each building directly on the one before. I don't just operate financial systems — I redesign the ones that leak.</p>
-      <p>I hold a <strong>Certified Scrum Master (CSM)</strong> certification and post-graduate certificates in International Business Management (Georgian College) and Project Management (Humber College). The PM path started at Georgian, where I did a co-op placement, delivered SOPs, and documented system walkthroughs — that experience pointed me toward Humber's IT Project Management program, which led directly to the Scrum certification and how I now run every project.</p>
-      <p>Outside work, I care deeply about <strong>teaching people</strong> and improving lives through technology. I follow AI and IoT closely — not as industry trends but as tools that genuinely change what's possible for individuals. I play video games not to escape but because good games are the best systems design you'll encounter outside an engineering department.</p>
-    </div>
-    <div class="about-right">
-      <div class="about-block rev">
-        <div class="about-block-title">Interests &amp; Beyond Work</div>
-        <div class="interest-grid">
-          <div class="int-item"><span class="int-ico">🤖</span><span>AI &amp; Machine Learning</span></div>
-          <div class="int-item"><span class="int-ico">🌐</span><span>IoT &amp; Connected Systems</span></div>
-          <div class="int-item"><span class="int-ico">🎮</span><span>Video Games &amp; Game Design</span></div>
-          <div class="int-item"><span class="int-ico">💡</span><span>Emerging Technology</span></div>
-          <div class="int-item"><span class="int-ico">🧑‍🏫</span><span>Teaching &amp; Mentoring</span></div>
-          <div class="int-item"><span class="int-ico">🌍</span><span>Improving Lives via Tech</span></div>
-          <div class="int-item"><span class="int-ico">📷</span><span>Photography &amp; Visual Art</span></div>
-          <div class="int-item"><span class="int-ico">🏗️</span><span>Construction &amp; Sustainability</span></div>
-        </div>
-      </div>
-      <div class="about-block rev">
-        <div class="about-block-title">How I Work</div>
-        <div class="val-list">
-          <div class="val-item">Diagnose the constraint before touching a tool</div>
-          <div class="val-item">Document everything so it runs without you</div>
-          <div class="val-item">Ask "what does this look like at 10x?" before committing</div>
-          <div class="val-item">Precision at volume is discipline, not talent</div>
-          <div class="val-item">Every manual process is waiting to be automated</div>
-        </div>
-      </div>
-      <div class="about-block rev">
-        <div class="about-block-title">Credentials</div>
-        <div class="val-list">
-          <div class="val-item">Certified Scrum Master (CSM)</div>
-          <div class="val-item">PG Certificate — International Business Management, Georgian College</div>
-          <div class="val-item">PG Certificate — IT Project Management, Humber College</div>
-          <div class="val-item">BSc Economics (Second Class Honours), Bowen University</div>
-        </div>
-      </div>
-    </div>
-  </div>
+ <div class="sh rev">
+ <span class="stag">✦ The Person Behind the Work</span>
+ <h2 class="stit">About Me</h2>
+ </div>
+ <div class="about-grid rev">
+ <div class="about-bio">
+ <p>I'm Tolu a <strong>Senior FX Analyst at a Big Five Canadian Bank</strong> with 7+ years of institutional financial operations experience. I specialise in high-accuracy, high-volume environments: multi-currency FX reconciliation, Visa dispute management, fraud analysis, and the process design that makes complex operations scale without breaking.</p>
+ <p>My career started in Lagos supervising construction projects, reconciling sales accounts for Nigerian Breweries, processing government payment vouchers, and selling Ford vehicles in a showroom that taught me the most important lesson of my professional life: <strong>diagnose the real problem before you open a laptop</strong>.</p>
+ <p>That discipline followed me to Toronto and into a Big Five Canadian Bank through chargebacks, Visa pre-arbitration, fraud analysis, and now FX settlements across 15+ currencies. Four progressive roles inside the same institution Chargeback Analyst, Business Systems Analyst, Fraud Analyst, Senior FX Analyst each building directly on the one before. I don't just operate financial systems I redesign the ones that leak.</p>
+ <p>I hold a <strong>Certified Scrum Master (CSM)</strong> certification and post-graduate certificates in International Business Management (Georgian College) and Project Management (Humber College). The PM path started at Georgian, where I did a co-op placement, delivered SOPs, and documented system walkthroughs that experience pointed me toward Humber's IT Project Management program, which led directly to the Scrum certification and how I now run every project.</p>
+ <p>Outside work, I care deeply about <strong>teaching people</strong> and improving lives through technology. I follow AI and IoT closely not as industry trends but as tools that genuinely change what's possible for individuals. I play video games not to escape but because good games are the best systems design you'll encounter outside an engineering department.</p>
+ </div>
+ <div class="about-right">
+ <div class="about-block rev">
+ <div class="about-block-title">Interests &amp; Beyond Work</div>
+ <div class="interest-grid">
+ <div class="int-item"><span class="int-ico">🤖</span><span>AI &amp; Machine Learning</span></div>
+ <div class="int-item"><span class="int-ico">🌐</span><span>IoT &amp; Connected Systems</span></div>
+ <div class="int-item"><span class="int-ico">🎮</span><span>Video Games &amp; Game Design</span></div>
+ <div class="int-item"><span class="int-ico">💡</span><span>Emerging Technology</span></div>
+ <div class="int-item"><span class="int-ico">🧑‍🏫</span><span>Teaching &amp; Mentoring</span></div>
+ <div class="int-item"><span class="int-ico">🌍</span><span>Improving Lives via Tech</span></div>
+ <div class="int-item"><span class="int-ico">📷</span><span>Photography &amp; Visual Art</span></div>
+ <div class="int-item"><span class="int-ico">🏗️</span><span>Construction &amp; Sustainability</span></div>
+ </div>
+ </div>
+ <div class="about-block rev">
+ <div class="about-block-title">How I Work</div>
+ <div class="val-list">
+ <div class="val-item">Diagnose the constraint before touching a tool</div>
+ <div class="val-item">Document everything so it runs without you</div>
+ <div class="val-item">Ask "what does this look like at 10x?" before committing</div>
+ <div class="val-item">Precision at volume is discipline, not talent</div>
+ <div class="val-item">Every manual process is waiting to be automated</div>
+ </div>
+ </div>
+ <div class="about-block rev">
+ <div class="about-block-title">Credentials</div>
+ <div class="val-list">
+ <div class="val-item">Certified Scrum Master (CSM)</div>
+ <div class="val-item">PG Certificate International Business Management, Georgian College</div>
+ <div class="val-item">PG Certificate IT Project Management, Humber College</div>
+ <div class="val-item">BSc Economics (Second Class Honours), Bowen University</div>
+ </div>
+ </div>
+ </div>
+ </div>
 </section>
 
-<!-- JOURNEY — reverse chronological -->
+<!-- JOURNEY reverse chronological -->
 <section id="journey">
-  <div class="sh rev">
-    <span class="stag">✦ Chronological Career Map</span>
-    <h2 class="stit">The Full Journey</h2>
-    <p class="ssub">Present → 2008. Every role, every skill unlocked, every connection forward. <span style="color:var(--ac)">Teal = newly unlocked</span> at that chapter, grey = carried forward.</p>
-  </div>
-  <div class="tlw">
-    <div class="tll"></div>
+ <div class="sh rev">
+ <span class="stag">&#10022; Career Timeline</span>
+ <h2 class="stit">Professional Journey</h2>
+ <p class="ssub">A complete record of roles, education, and responsibilities in reverse chronological order. <span style="color:var(--ac)">Teal tags</span> mark skills first introduced at that stage.</p>
+ </div>
+ <div class="tlw">
+ <div class="tll"></div>
 
-    
-        <!-- 2023 FX Analyst -->
-    <div class="tc"><div class="tcl"><div class="tcd">May 2023 – Present</div><div class="tct job">Big Five Bank</div><div class="tcdot job"></div></div>
-    <div class="tcr"><h3 class="tctit">Senior FX Analyst — led MCP project, cut reconciliation 50%</h3><div class="tcco">Big Five Canadian Bank · Toronto, ON</div>
-    <p class="tcbod">Manage FX and Global Money Transfers. Multi-currency reconciliation across 15+ currencies, high-volume client disputes, trade settlements for Prepaid Visa and Mastercard. Led the MCP (Multi-Currency Payments) internal project: built trackers cutting reconciliation from 60 to 30 minutes, same-day investigation turnaround. Took on co-brand card operations. 99.5% accuracy. Trained team members and created knowledge transfer documentation.</p>
-    <div class="skch"><span class="sk">Systems thinking</span><span class="sk">SOP creation</span><span class="sk">Team training</span><span class="sk">Process optimisation</span><span class="sk nw">WSS</span><span class="sk nw">IWS</span><span class="sk nw">MCP</span><span class="sk nw">FX settlements</span><span class="sk nw">Multi-currency reconciliation</span><span class="sk nw">PostEdge</span></div>
-    <div class="ulk job">⬡ Unlocked: Full financial systems fluency at institutional scale — leading projects, not just executing them</div></div></div>
+ <!-- 2023 FX Analyst -->
+ <div class="tc"><div class="tcl"><div class="tcd">May 2023 to Present</div><div class="tct job">Senior Role</div><div class="tcdot job"></div></div>
+ <div class="tcr"><h3 class="tctit">Senior FX Analyst</h3><div class="tcco">Big Five Canadian Bank · Toronto, ON</div>
+ <p class="tcbod">Manages multi-currency reconciliation across 15 or more currencies within Global Money Transfers and FX operations. Leads client dispute resolution, trade settlements for Prepaid Visa and Mastercard, and co-brand card operations including PostEdge reporting, ledger entries, and TSC escalations. Maintains a 99.5% payment accuracy rate across daily settlement runs. Initiated and delivered the MCP (Multi-Currency Payments) internal project: designed custom tracking infrastructure that reduced daily reconciliation time from 60 to 30 minutes. Trained team members and produced knowledge transfer documentation to ensure operational continuity.</p>
+ <div class="skch"><span class="sk">SOP development</span><span class="sk">Team training</span><span class="sk">Process design</span><span class="sk nw">WSS</span><span class="sk nw">IWS</span><span class="sk nw">MCP</span><span class="sk nw">FX settlements</span><span class="sk nw">Multi-currency reconciliation</span><span class="sk nw">PostEdge</span></div>
+ <div class="ulk job">&#11042; Delivered: institutional-scale FX operations with project leadership and 99.5% accuracy</div></div></div>
 
-    
-        <!-- Fraud Analyst -->
-    <div class="tc"><div class="tcl"><div class="tcd">Aug 2022 – May 2023</div><div class="tct job">Big Five Bank</div><div class="tcdot job"></div></div>
-    <div class="tcr"><h3 class="tctit">Fraud Analyst — 99% accuracy, 20+ cases/day, $2,000+ threshold</h3><div class="tcco">Big Five Canadian Bank · Toronto, ON</div>
-    <p class="tcbod">High-stakes, high-volume fraud detection across ATM, online, and branch channels. 20+ cases per day, each over $2,000. Maintained audit logs, ensured regulatory compliance, conducted root cause analyses. Updated 500+ customer account records. 99% accuracy rate — sharpened the ability to move fast without sacrificing precision.</p>
-    <div class="skch"><span class="sk">Systems thinking</span><span class="sk">QA</span><span class="sk">SOP creation</span><span class="sk nw">PRM</span><span class="sk nw">COINS</span><span class="sk nw">Transaction monitoring</span><span class="sk nw">Regulatory compliance</span><span class="sk nw">Audit logs</span></div>
-    <div class="ulk job">⬡ Unlocked: Precision at scale under pressure — accuracy as a repeatable discipline</div></div></div>
+ <!-- Fraud Analyst -->
+ <div class="tc"><div class="tcl"><div class="tcd">Aug 2022 to May 2023</div><div class="tct job">Analyst</div><div class="tcdot job"></div></div>
+ <div class="tcr"><h3 class="tctit">Fraud Analyst</h3><div class="tcco">Big Five Canadian Bank · Toronto, ON</div>
+ <p class="tcbod">Investigated and resolved high-value fraud cases across ATM, online, and branch banking channels. Handled 20 or more cases daily, each exceeding the $2,000 threshold, achieving a sustained 99% accuracy rate. Maintained audit logs, ensured AML compliance, and met all SLA timelines. Conducted root cause analyses on fraud patterns and updated over 500 customer account records with corrective actions. Contributed to SOP development with the loss management team, resulting in a 30% reduction in chargeback errors.</p>
+ <div class="skch"><span class="sk">QA review</span><span class="sk">SOP development</span><span class="sk">Process design</span><span class="sk nw">PRM</span><span class="sk nw">COINS</span><span class="sk nw">Transaction monitoring</span><span class="sk nw">AML compliance</span><span class="sk nw">Audit log management</span></div>
+ <div class="ulk job">&#11042; Delivered: 99% accuracy on 20 or more high-value fraud cases per day</div></div></div>
 
-    
-        <!-- BSA -->
-    <div class="tc"><div class="tcl"><div class="tcd">Jan 2019 – Jul 2022</div><div class="tct job">Big Five Bank</div><div class="tcdot job"></div></div>
-    <div class="tcr"><h3 class="tctit">Associate Business Systems Analyst — Visa pre-arbitration SME</h3><div class="tcco">Big Five Canadian Bank · Toronto, ON</div>
-    <p class="tcbod">Subject matter expert on Visa pre-arbitration — part investigator, part systems analyst. Researched evidence, owned liable cases, ensured funds recovery. Collaborated with fraud and loss management to build SOPs reducing errors by 30%. Conducted QA reviews. Shifted from thinking about individual cases to the systems producing them.</p>
-    <div class="skch"><span class="sk">Chargeback processing</span><span class="sk">SOP creation</span><span class="sk">Systems thinking</span><span class="sk nw">Visa pre-arbitration</span><span class="sk nw">Funds recovery</span><span class="sk nw">QA reviews</span><span class="sk nw">ECRM / Salesforce</span><span class="sk nw">Stakeholder collaboration</span></div>
-    <div class="ulk job">⬡ Unlocked: Systems-level process design — improving the machinery, not just operating it</div></div></div>
+ <!-- BSA -->
+ <div class="tc"><div class="tcl"><div class="tcd">Jan 2019 to Jul 2022</div><div class="tct job">Analyst</div><div class="tcdot job"></div></div>
+ <div class="tcr"><h3 class="tctit">Associate Business Systems Analyst</h3><div class="tcco">Big Five Canadian Bank · Toronto, ON</div>
+ <p class="tcbod">Served as subject matter expert for Visa pre-arbitration disputes. Researched transaction evidence, managed liable case portfolios, and ensured accurate funds recovery outcomes. Collaborated with fraud and loss management teams to develop SOPs that reduced operational errors and inconsistencies by 30%. Conducted QA reviews on processed disputes and produced training materials for incoming analysts. Applied systematic case analysis to identify process gaps and recommend workflow improvements.</p>
+ <div class="skch"><span class="sk">Chargeback processing</span><span class="sk">SOP development</span><span class="sk">Process design</span><span class="sk nw">Visa pre-arbitration</span><span class="sk nw">Funds recovery</span><span class="sk nw">QA reviews</span><span class="sk nw">ECRM / Salesforce</span><span class="sk nw">Stakeholder coordination</span></div>
+ <div class="ulk job">&#11042; Delivered: 30% error reduction through SOP design and dispute workflow improvements</div></div></div>
 
-    <!-- Chargeback -->
-    <div class="tc"><div class="tcl"><div class="tcd">May 2018 – Jan 2019</div><div class="tct job">Big Five Bank</div><div class="tcdot job"></div></div>
-    <div class="tcr"><h3 class="tctit">Chargeback Analyst — 500+ cases/month, 20% faster processing</h3><div class="tcco">Big Five Canadian Bank · Toronto, ON</div>
-    <p class="tcbod">Arrived in Canada and entered high-volume financial operations immediately. Processed 500+ chargebacks monthly, surpassed targets, cut processing time by 20% through process improvements. Trained new hires — 15% increase in team productivity. First systematic application of writing processes so no one has to figure it out blind again.</p>
-    <div class="skch"><span class="sk">Payment processing</span><span class="sk">Financial reconciliation</span><span class="sk">Institutional compliance</span><span class="sk nw">Chargeback processing</span><span class="sk nw">SOP creation</span><span class="sk nw">Team training</span><span class="sk nw">Process optimisation</span></div>
-    <div class="tcln">→ SOP creation here led to 30% error reduction in the next role — same discipline, broader scope</div></div></div>
+ <!-- Chargeback -->
+ <div class="tc"><div class="tcl"><div class="tcd">May 2018 to Jan 2019</div><div class="tct job">Analyst</div><div class="tcdot job"></div></div>
+ <div class="tcr"><h3 class="tctit">Chargeback Analyst</h3><div class="tcco">Big Five Canadian Bank · Toronto, ON</div>
+ <p class="tcbod">Processed over 500 chargebacks monthly while consistently meeting accuracy targets. Reduced processing time by 20% through systematic workflow improvements. Trained incoming analysts and authored onboarding SOPs that contributed to a 15% increase in team productivity. Established the foundational process documentation discipline carried into every subsequent role.</p>
+ <div class="skch"><span class="sk">Payment processing</span><span class="sk">Financial reconciliation</span><span class="sk">Institutional compliance</span><span class="sk nw">Chargeback processing</span><span class="sk nw">SOP development</span><span class="sk nw">Team training</span><span class="sk nw">Process optimisation</span></div>
+ <div class="tcln">SOP discipline established here contributed directly to 30% error reduction in the subsequent role</div></div></div>
 
-    <!-- Humber -->
-    <div class="tc"><div class="tcl"><div class="tcd">2017 – 2018</div><div class="tct edu">Education</div><div class="tcdot edu"></div></div>
-    <div class="tcr"><h3 class="tctit">PG Certificate — IT Project Management, Humber College</h3><div class="tcco">Humber College · Toronto, ON</div>
-    <p class="tcbod">Direct continuation from Georgian College's International Business Management program. Georgian gave the broad business foundation and co-op delivery experience — Humber took it into IT project management specifically. Covered Agile methodologies, system delivery lifecycles, stakeholder management, and risk frameworks. Led directly to Scrum Master certification and how every project has been managed since.</p>
-    <div class="skch"><span class="sk">Project management</span><span class="sk">SOP writing</span><span class="sk">System walkthroughs</span><span class="sk nw">Agile / Scrum</span><span class="sk nw">IT project delivery</span><span class="sk nw">Stakeholder management</span><span class="sk nw">Risk frameworks</span></div>
-    <div class="ulk edu">⬡ Unlocked: Formal project management framework → Certified Scrum Master (CSM)</div></div></div>
+ <!-- Humber -->
+ <div class="tc"><div class="tcl"><div class="tcd">2017 to 2018</div><div class="tct edu">Education</div><div class="tcdot edu"></div></div>
+ <div class="tcr"><h3 class="tctit">Post-Graduate Certificate, IT Project Management</h3><div class="tcco">Humber College · Toronto, ON</div>
+ <p class="tcbod">Completed a post-graduate program in IT Project Management, building directly on the International Business Management foundation from Georgian College. Covered Agile methodologies, software development lifecycles, stakeholder management, and risk frameworks. Applied project delivery principles through practical coursework and led directly to Certified Scrum Master (CSM) certification.</p>
+ <div class="skch"><span class="sk">Project management</span><span class="sk">SOP writing</span><span class="sk">System documentation</span><span class="sk nw">Agile / Scrum</span><span class="sk nw">IT project delivery</span><span class="sk nw">Stakeholder management</span><span class="sk nw">Risk frameworks</span></div>
+ <div class="ulk edu">&#11042; Outcome: Certified Scrum Master (CSM) certification</div></div></div>
 
-    <!-- Georgian -->
-    <div class="tc"><div class="tcl"><div class="tcd">2015 – 2017</div><div class="tct edu">Education</div><div class="tcdot edu"></div></div>
-    <div class="tcr"><h3 class="tctit">PG Certificate — International Business Management, Georgian College</h3><div class="tcco">Georgian College · Ontario</div>
-    <p class="tcbod">Post-graduate program in International Business Management. Completed a co-op placement where I delivered real project outcomes — wrote SOPs, documented system walkthroughs, and handed over documented processes to teams. That practical delivery experience confirmed that project management was a natural fit, and pointed directly toward Humber's IT PM program.</p>
-    <div class="skch"><span class="sk">Client management</span><span class="sk">Needs analysis</span><span class="sk">Business strategy</span><span class="sk nw">International business</span><span class="sk nw">Co-op delivery</span><span class="sk nw">SOP documentation</span><span class="sk nw">System walkthroughs</span></div>
-    <div class="tcln">→ Co-op delivery confirmed the PM instinct — led directly to Humber IT Project Management, then Scrum Master</div></div></div>
+ <!-- Georgian -->
+ <div class="tc"><div class="tcl"><div class="tcd">2015 to 2017</div><div class="tct edu">Education</div><div class="tcdot edu"></div></div>
+ <div class="tcr"><h3 class="tctit">Post-Graduate Certificate, International Business Management</h3><div class="tcco">Georgian College · Ontario</div>
+ <p class="tcbod">Completed a post-graduate program in International Business Management, including a co-op placement where project deliverables were produced for a real client environment. Responsibilities included writing SOPs, documenting system walkthroughs, and handing over structured process documentation to operational teams. The co-op experience confirmed a strong fit for project-based delivery work and informed the decision to pursue IT Project Management at Humber College.</p>
+ <div class="skch"><span class="sk">Client management</span><span class="sk">Needs analysis</span><span class="sk">Business strategy</span><span class="sk nw">International business</span><span class="sk nw">Co-op delivery</span><span class="sk nw">SOP documentation</span><span class="sk nw">System walkthroughs</span></div>
+ <div class="tcln">Co-op placement confirmed project delivery as a core competency, leading to the Humber IT Project Management program</div></div></div>
 
-    
-        <!-- R.T. Briscoe -->
-    <div class="tc"><div class="tcl"><div class="tcd">Feb – Nov 2014</div><div class="tct job">Sales</div><div class="tcdot job"></div></div>
-    <div class="tcr"><h3 class="tctit">Sales Executive — Briscoe Ford Automobiles</h3><div class="tcco">R.T. Briscoe Nigeria PLC · Ikeja, Lagos</div>
-    <p class="tcbod">Sold Ford vehicles through showroom and exhibition consultations. Full sales cycle: needs analysis, demonstration, negotiation, payment, delivery, after-sales handover. Completed management sales reports. The critical lesson — diagnose the actual need before proposing anything — became the discipline that defines every consulting engagement since.</p>
-    <div class="skch"><span class="sk">Systems thinking</span><span class="sk">Financial documentation</span><span class="sk nw">Client relationship management</span><span class="sk nw">Needs analysis</span><span class="sk nw">Sales negotiation</span><span class="sk nw">Reporting</span></div>
-    <div class="tcln">→ "Understand the need before proposing a solution" — still the first step of every project</div></div></div>
+ <!-- R.T. Briscoe -->
+ <div class="tc"><div class="tcl"><div class="tcd">Feb to Nov 2014</div><div class="tct job">Sales</div><div class="tcdot job"></div></div>
+ <div class="tcr"><h3 class="tctit">Sales Executive</h3><div class="tcco">R.T. Briscoe Nigeria PLC · Ikeja, Lagos</div>
+ <p class="tcbod">Managed the full vehicle sales cycle at a Ford dealership, covering needs assessment, product demonstration, price negotiation, payment processing, delivery coordination, and after-sales handover. Completed detailed management sales reports on a regular basis. Developed a rigorous approach to client needs analysis prior to making any product recommendation, a discipline that has informed every subsequent engagement.</p>
+ <div class="skch"><span class="sk">Financial documentation</span><span class="sk">Reporting</span><span class="sk nw">Client relationship management</span><span class="sk nw">Needs analysis</span><span class="sk nw">Sales negotiation</span><span class="sk nw">End-to-end sales cycle</span></div>
+ <div class="tcln">The principle of diagnosing the actual need before proposing a solution was established here and has remained central to all subsequent work</div></div></div>
 
-    <!-- NYSC -->
-    <div class="tc"><div class="tcl"><div class="tcd">Nov 2013 – Feb 2014</div><div class="tct job">Public Service</div><div class="tcdot job"></div></div>
-    <div class="tcr"><h3 class="tctit">NYSC — Budgeting Department, Government Administration</h3><div class="tcco">Igando-Ikotun LCDA · Lagos</div>
-    <p class="tcbod">National service in a government budgeting department. Received and dispatched payment vouchers, maintained dispatch logs, submitted to accounts, and prepared pre-payment inspection certificates. First formal exposure to institutional payment workflows and accountability chains.</p>
-    <div class="skch"><span class="sk">Systems thinking</span><span class="sk">Reconciliation</span><span class="sk nw">Payment processing</span><span class="sk nw">Financial documentation</span><span class="sk nw">Institutional compliance</span></div>
-    <div class="tcln">→ Voucher processing and payment verification mapped directly onto chargeback and payment ops at a leading Canadian bank</div></div></div>
+ <!-- NYSC -->
+ <div class="tc"><div class="tcl"><div class="tcd">Nov 2013 to Feb 2014</div><div class="tct job">Public Service</div><div class="tcdot job"></div></div>
+ <div class="tcr"><h3 class="tctit">National Youth Service Corps (NYSC)</h3><div class="tcco">Igando-Ikotun LCDA, Budgeting Department · Lagos, Nigeria</div>
+ <p class="tcbod">Completed mandatory national service within a government budgeting department. Received and recorded payment vouchers, maintained dispatch logs, submitted documentation to the accounts department, and prepared pre-payment inspection certificates. Provided first formal exposure to institutional payment workflows, accountability chains, and government-level financial administration.</p>
+ <div class="skch"><span class="sk">Reconciliation</span><span class="sk nw">Payment processing</span><span class="sk nw">Financial documentation</span><span class="sk nw">Institutional compliance</span><span class="sk nw">Record keeping</span></div>
+ <div class="tcln">Voucher processing and payment verification experience mapped directly onto chargeback and payment operations in subsequent banking roles</div></div></div>
 
-    <!-- Bowen University -->
-    <div class="tc"><div class="tcl"><div class="tcd">2009 – 2013</div><div class="tct edu">Education</div><div class="tcdot edu"></div></div>
-    <div class="tcr"><h3 class="tctit">BSc Economics — learning to see systems</h3><div class="tcco">Bowen University · Iwo, Osun State, Nigeria</div>
-    <p class="tcbod">Economics taught me that everything is a system: incentives, constraints, feedback loops, and leaks. That mental model followed into fraud detection, FX operations, and automation. Second class honours — and a permanent habit of asking why a system behaves the way it does.</p>
-    <div class="skch"><span class="sk">Reliability</span><span class="sk nw">Systems thinking</span><span class="sk nw">Analytical frameworks</span><span class="sk nw">Root cause reasoning</span></div>
-    <div class="ulk edu">⬡ Unlocked: The mental model that underpins every role that followed</div></div></div>
+ <!-- Bowen University -->
+ <div class="tc"><div class="tcl"><div class="tcd">2009 to 2013</div><div class="tct edu">Education</div><div class="tcdot edu"></div></div>
+ <div class="tcr"><h3 class="tctit">BSc Economics, Second Class Honours</h3><div class="tcco">Bowen University · Iwo, Osun State, Nigeria</div>
+ <p class="tcbod">Completed an undergraduate degree in Economics with second class honours. The programme developed a structured approach to analysing systems, identifying constraints, and tracing the causes of inefficiency. This analytical foundation has informed the approach to financial operations, fraud detection, process design, and automation across every subsequent role.</p>
+ <div class="skch"><span class="sk nw">Economic analysis</span><span class="sk nw">Systems thinking</span><span class="sk nw">Analytical frameworks</span><span class="sk nw">Quantitative reasoning</span></div>
+ <div class="ulk edu">&#11042; Foundation: the analytical framework applied across all subsequent roles</div></div></div>
 
-    <!-- Julie One -->
-    <div class="tc"><div class="tcl"><div class="tcd">2010</div><div class="tct job">Operations</div><div class="tcdot job"></div></div>
-    <div class="tcr"><h3 class="tctit">Supervisor — Construction &amp; Product Distribution</h3><div class="tcco">Julie One Nigeria Limited · Lagos</div>
-    <p class="tcbod">While still studying: supervised school building construction (material control) and managed Nigerian Breweries product distribution — stock-taking, customer credit follow-ups, and reconciling sales accounts. First direct encounter with inventory systems and financial reconciliation as daily disciplines.</p>
-    <div class="skch"><span class="sk">Systems thinking</span><span class="sk nw">Inventory management</span><span class="sk nw">Logistics</span><span class="sk nw">Sales reconciliation</span><span class="sk nw">Supervision</span></div>
-    <div class="tcln">→ Sales reconciliation here mapped directly onto payment and FX reconciliation at the bank nearly a decade later</div></div></div>
+ <!-- Julie One -->
+ <div class="tc"><div class="tcl"><div class="tcd">2010</div><div class="tct job">Operations</div><div class="tcdot job"></div></div>
+ <div class="tcr"><h3 class="tctit">Supervisor, Construction and Product Distribution</h3><div class="tcco">Julie One Nigeria Limited · Lagos, Nigeria</div>
+ <p class="tcbod">Supervised construction activities during a school building project, including material procurement and control. Simultaneously managed Nigerian Breweries product distribution operations, covering stock-taking, customer credit follow-ups, and daily sales account reconciliation. Both roles were carried out concurrently with undergraduate studies at Bowen University.</p>
+ <div class="skch"><span class="sk nw">Inventory management</span><span class="sk nw">Logistics coordination</span><span class="sk nw">Sales reconciliation</span><span class="sk nw">Operational supervision</span><span class="sk nw">Material control</span></div>
+ <div class="tcln">Sales reconciliation and inventory discipline established here mapped directly onto financial operations work at the bank</div></div></div>
 
-    <!-- Volunteer -->
-    <div class="tc"><div class="tcl"><div class="tcd">2008</div><div class="tct vol">Volunteer</div><div class="tcdot vol"></div></div>
-    <div class="tcr"><h3 class="tctit">First service outside myself</h3><div class="tcco">Arrows of God Orphanage · Lekki, Lagos</div>
-    <p class="tcbod">Volunteered at an orphanage — cleaning, tutoring, and caring for children. First structured experience with responsibility and showing up for a community beyond your own.</p>
-    <div class="skch"><span class="sk nw">Teamwork</span><span class="sk nw">Reliability</span><span class="sk nw">Community responsibility</span></div>
-    <div class="tcln">→ The habit of showing up and following through that has defined every role since</div></div></div>
+ <!-- Volunteer -->
+ <div class="tc"><div class="tcl"><div class="tcd">2008</div><div class="tct vol">Volunteer</div><div class="tcdot vol"></div></div>
+ <div class="tcr"><h3 class="tctit">Volunteer</h3><div class="tcco">Arrows of God Orphanage · Lekki, Lagos, Nigeria</div>
+ <p class="tcbod">Provided voluntary support at a children's orphanage, assisting with cleaning, tutoring, and general care activities. Represented an early commitment to structured community responsibility and reliable follow-through.</p>
+ <div class="skch"><span class="sk nw">Community service</span><span class="sk nw">Tutoring</span><span class="sk nw">Reliability</span></div>
+ </div></div>
 
-  </div>
+ </div>
 </section>
 
 <!-- SKILL GRAPH -->
 <section id="skills">
-  <div class="sh rev">
-    <span class="stag">✦ Core Competencies</span>
-    <h2 class="stit">Six Institutional Skill Clusters</h2>
-    <p class="ssub">Built across 7+ years inside a Big Five Canadian Bank. Click any node to see the evidence, tools, and connections behind each capability.</p>
-  </div>
-  <canvas id="skillCanvas" width="900" height="500"></canvas>
-  <!-- Cutout popup below canvas -->
-  <div class="node-popup" id="nodePopup">
-    <div class="np-inner">
-      <div class="np-header">
-        <div class="np-name" id="npName"></div>
-        <div id="npPct" class="np-pct-hero"></div>
-      </div>
-      <div class="np-section">
-        <div class="np-label">Institutional Origin</div>
-        <div class="np-value" id="npOrigin" style="color:var(--tx);font-weight:400"></div>
-      </div>
-      <div class="np-section">
-        <div class="np-label">Systems &amp; Tools</div>
-        <div class="np-value" id="npUsed" style="color:var(--ac);font-family:var(--fm);font-size:11px;letter-spacing:.04em"></div>
-      </div>
-      <div class="np-section">
-        <div class="np-label">Competency Level</div>
-        <div class="np-bar-wrap" style="margin-top:12px;background:rgba(255,255,255,.03)"><div class="np-bar-fill" id="npBar"></div></div>
-      </div>
-      <div class="np-insight-box">
-        <div class="np-label" style="margin-bottom:8px">Strategic Impact</div>
-        <div class="np-value" id="npInsight" style="font-size:13px;line-height:1.7;color:rgba(232,237,242,.8)"></div>
-      </div>
-      <div class="np-conns">
-        <div class="np-conns-title">Connections — click any card to highlight that link on the graph</div>
-        <div class="conn-grid" id="connGrid"></div>
-      </div>
-    </div>
-    <div class="conn-close" id="popupClose" onclick="closePopup()">✕ Close Specification</div>
-  </div>
+ <div class="sh rev">
+ <span class="stag">✦ Core Competencies</span>
+ <h2 class="stit">Six Institutional Skill Clusters</h2>
+ <p class="ssub">Built across 7+ years inside a Big Five Canadian Bank. Click any node to see the evidence, tools, and connections behind each capability.</p>
+ </div>
+ <canvas id="skillCanvas" width="900" height="500"></canvas>
+ <!-- Cutout popup below canvas -->
+ <div class="node-popup" id="nodePopup">
+ <div class="np-inner">
+ <div class="np-header">
+ <div class="np-name" id="npName"></div>
+ <div id="npPct" class="np-pct-hero"></div>
+ </div>
+ <div class="np-section">
+ <div class="np-label">Institutional Origin</div>
+ <div class="np-value" id="npOrigin" style="color:var(--tx);font-weight:400"></div>
+ </div>
+ <div class="np-section">
+ <div class="np-label">Systems &amp; Tools</div>
+ <div class="np-value" id="npUsed" style="color:var(--ac);font-family:var(--fm);font-size:11px;letter-spacing:.04em"></div>
+ </div>
+ <div class="np-section">
+ <div class="np-label">Competency Level</div>
+ <div class="np-bar-wrap" style="margin-top:12px;background:rgba(255,255,255,.03)"><div class="np-bar-fill" id="npBar"></div></div>
+ </div>
+ <div class="np-insight-box">
+ <div class="np-label" style="margin-bottom:8px">Strategic Impact</div>
+ <div class="np-value" id="npInsight" style="font-size:13px;line-height:1.7;color:rgba(232,237,242,.8)"></div>
+ </div>
+ <div class="np-conns">
+ <div class="np-conns-title">Connections click any card to highlight that link on the graph</div>
+ <div class="conn-grid" id="connGrid"></div>
+ </div>
+ </div>
+ <div class="conn-close" id="popupClose" onclick="closePopup()">✕ Close Specification</div>
+ </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
-  <div class="sh rev">
-    <span class="stag">✦ Open to Opportunities</span>
-    <h2 class="stit">Get In Touch</h2>
-    <p class="ssub">Open to senior financial operations, FX, risk, or project delivery roles in Toronto. Available for direct conversation — or download the CV above to share with your team.</p>
-  </div>
-  <div class="contact-wrap rev">
-    <div class="contact-info">
-      <div class="ci-item">
-        <div class="ci-label">Email</div>
-        <div class="ci-value"><a href="/cdn-cgi/l/email-protection#cbbfa4a7bea7a4bbaeaaafaea1bebca4a58baca6aaa2a7e5a8a4a6"><span class="__cf_email__" data-cfemail="c3b7acafb6afacb3a6a2a7a6a9b6b4acad83a4aea2aaafeda0acae">[email&#160;protected]</span></a></div>
-      </div>
-      <div class="ci-item">
-        <div class="ci-label">Phone</div>
-        <div class="ci-value"><a href="tel:7059704667">705-970-4667</a></div>
-      </div>
-      <div class="ci-item">
-        <div class="ci-label">Location</div>
-        <div class="ci-value">Toronto, Ontario, Canada</div>
-      </div>
-      <div class="ci-item">
-        <div class="ci-label">CV / Resume</div>
-        <div class="ci-value"><a href="Tolu_Adejuwon_CV.docx" download>&#8595; Download full CV (.docx)</a></div>
-      </div>
-      <p class="ci-note">Response within 24 hours. Happy to speak directly or connect via LinkedIn — please include the role or organisation in your message.</p>
-    </div>
-    <div class="cform">
-      <div class="cf-row">
-        <div class="cf-field">
-          <label for="cf-name">Your Name</label>
-          <input type="text" id="cf-name" placeholder="Jane Smith" autocomplete="off">
-        </div>
-        <div class="cf-field">
-          <label for="cf-email">Your Email</label>
-          <input type="email" id="cf-email" placeholder="jane@company.com" autocomplete="off">
-        </div>
-      </div>
-      <div class="cf-field">
-        <label for="cf-role">Role or Opportunity <span style="color:var(--mu);font-size:10px">(optional but helpful)</span></label>
-        <input type="text" id="cf-role" placeholder="e.g. Senior FX Analyst · RBC · Permanent" autocomplete="off">
-      </div>
-      <div class="cf-field">
-        <label for="cf-msg">Message</label>
-        <textarea id="cf-msg" placeholder="Introduce yourself, share the role details, or just reach out. I read every message."></textarea>
-      </div>
-      <div class="cf-submit">
-        <button class="cf-btn" onclick="sendForm()">Send Message &#8594;</button>
-        <p class="cf-note">Opens your email client with the message pre-filled. No data is stored.</p>
-      </div>
-      <div class="cf-success" id="cfSuccess">
-        &#10003; Your email client should have opened with the message ready to send. If it did not, email <a href="/cdn-cgi/l/email-protection#4632292a332a2936232722232c3331292806212b272f2a6825292b" style="color:var(--ac)"><span class="__cf_email__" data-cfemail="14607b7861787b64717570717e61637b7a547379757d783a777b79">[email&#160;protected]</span></a> directly.
-      </div>
-    </div>
-  </div>
+ <div class="sh rev">
+ <span class="stag">✦ Open to Opportunities</span>
+ <h2 class="stit">Get In Touch</h2>
+ <p class="ssub">Open to senior financial operations, FX, risk, or project delivery roles in Toronto. Available for direct conversation. CV available to download above.</p>
+ </div>
+ <div class="contact-wrap rev">
+ <div class="contact-info">
+ <div class="ci-item">
+ <div class="ci-label">Email</div>
+ <div class="ci-value"><a href="mailto:tolulopeadejuwon@gmail.com">tolulopeadejuwon@gmail.com</a></div>
+ </div>
+ <div class="ci-item">
+ <div class="ci-label">Location</div>
+ <div class="ci-value">Toronto, Ontario, Canada</div>
+ </div>
+ <div class="ci-item">
+ <div class="ci-label">CV / Resume</div>
+ <div class="ci-value"><a href="Tolu_Adejuwon_CV.docx" download>&#8595; Download full CV (.docx)</a></div>
+ </div>
+ <p class="ci-note">Response within 24 hours. Please include the role title and organisation in your message.</p>
+ </div> </div>
+ <div class="cform">
+ <div class="cf-row">
+ <div class="cf-field">
+ <label for="cf-name">Your Name</label>
+ <input type="text" id="cf-name" placeholder="Jane Smith" autocomplete="off">
+ </div>
+ <div class="cf-field">
+ <label for="cf-email">Your Email</label>
+ <input type="email" id="cf-email" placeholder="jane@company.com" autocomplete="off">
+ </div>
+ </div>
+ <div class="cf-field">
+ <label for="cf-role">Role or Opportunity <span style="color:var(--mu);font-size:10px">(optional but helpful)</span></label>
+ <input type="text" id="cf-role" placeholder="e.g. Senior FX Analyst · RBC · Permanent" autocomplete="off">
+ </div>
+ <div class="cf-field">
+ <label for="cf-msg">Message</label>
+ <textarea id="cf-msg" placeholder="Introduce yourself, share the role details, or just reach out. I read every message."></textarea>
+ </div>
+ <div class="cf-submit">
+ <button class="cf-btn" onclick="sendForm()">Send Message &#8594;</button>
+ <p class="cf-note">Opens your email client with the message pre-filled. No data is stored.</p>
+ </div>
+ <div class="cf-success" id="cfSuccess">
+ &#10003; Your email client should have opened with the message pre-filled. If it did not, email <a href="mailto:tolulopeadejuwon@gmail.com" style="color:var(--ac)">tolulopeadejuwon@gmail.com</a> directly.
+ </div>
+ </div>
+ </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <div>
-    <div class="fnm">Tolulope John Adejuwon</div>
-    <div class="fct">Toronto, ON &nbsp;&middot;&nbsp; <a href="/cdn-cgi/l/email-protection#592d36352c3536293c383d3c332c2e3637193e34383035773a3634"><span class="__cf_email__" data-cfemail="63170c0f160f0c13060207060916140c0d23040e020a0f4d000c0e">[email&#160;protected]</span></a> &nbsp;&middot;&nbsp; <a href="tel:7059704667">705-970-4667</a><br>
-    CSM &nbsp;&middot;&nbsp; BSc Economics &nbsp;&middot;&nbsp; PG: International Business &amp; IT Project Management</div>
-  </div>
-  <div class="fcta">
-    <a href="Tolu_Adejuwon_CV.docx" download class="bg2">&#8595; Download CV</a>
-    <a href="#contact" class="bp">Get In Touch &#8594;</a>
-  </div>
+ <div>
+ <div class="fnm">Tolulope John Adejuwon</div>
+ <div class="fct">Toronto, ON &nbsp;&middot;&nbsp; <a href="mailto:tolulopeadejuwon@gmail.com">tolulopeadejuwon@gmail.com</a><br>
+ CSM &nbsp;&middot;&nbsp; BSc Economics &nbsp;&middot;&nbsp; PG: International Business and IT Project Management</div>
+ </div>
+ <div class="fcta">
+ <a href="Tolu_Adejuwon_CV.docx" download class="bg2">&#8595; Download CV</a>
+ <a href="#contact" class="bp">Get In Touch &#8594;</a>
+ </div>
 </footer>
 
 <script>
 // ── NAV HAMBURGER ─────────────────────────────────────────────────────────
 var navToggle = document.getElementById('navToggle');
-var navLinks  = document.getElementById('navLinks');
+var navLinks = document.getElementById('navLinks');
 if(navToggle){
-  navToggle.addEventListener('click', function(){
-    navToggle.classList.toggle('open');
-    navLinks.classList.toggle('open');
-  });
-  navLinks.querySelectorAll('a').forEach(function(a){
-    a.addEventListener('click', function(){
-      navToggle.classList.remove('open');
-      navLinks.classList.remove('open');
-    });
-  });
+ navToggle.addEventListener('click', function(){
+ navToggle.classList.toggle('open');
+ navLinks.classList.toggle('open');
+ });
+ navLinks.querySelectorAll('a').forEach(function(a){
+ a.addEventListener('click', function(){
+ navToggle.classList.remove('open');
+ navLinks.classList.remove('open');
+ });
+ });
 }
 
 
@@ -619,67 +611,67 @@ var mx = 0, my = 0, rx = 0, ry = 0;
 document.addEventListener('mousemove', function(e){ mx=e.clientX; my=e.clientY; cur.style.left=mx+'px'; cur.style.top=my+'px'; });
 (function raf(){ rx+=(mx-rx)*.12; ry+=(my-ry)*.12; crr.style.left=rx+'px'; crr.style.top=ry+'px'; requestAnimationFrame(raf); })();
 document.querySelectorAll('a,button,.pc,.conn-card').forEach(function(el){
-  el.addEventListener('mouseenter', function(){ cur.style.width='5px'; cur.style.height='5px'; crr.style.width='50px'; crr.style.height='50px'; });
-  el.addEventListener('mouseleave', function(){ cur.style.width='10px'; cur.style.height='10px'; crr.style.width='34px'; crr.style.height='34px'; });
+ el.addEventListener('mouseenter', function(){ cur.style.width='5px'; cur.style.height='5px'; crr.style.width='50px'; crr.style.height='50px'; });
+ el.addEventListener('mouseleave', function(){ cur.style.width='10px'; cur.style.height='10px'; crr.style.width='34px'; crr.style.height='34px'; });
 });
 
 // ── SCROLL REVEAL ─────────────────────────────────────────────────────────
 var obs = new IntersectionObserver(function(entries){
-  entries.forEach(function(e){ if(e.isIntersecting) e.target.classList.add('vis'); });
+ entries.forEach(function(e){ if(e.isIntersecting) e.target.classList.add('vis'); });
 }, {threshold:0.06});
 document.querySelectorAll('.rev,.tc').forEach(function(el){ obs.observe(el); });
 
 // ── SKILL DATA (RECRUITER-OPTIMISED) ─────────────────────────────────────
 var SK = [
-  { id:0, label:'FX & Trade Ops',        x:0.15, y:0.30, color:'#4ff8c0', level:0.98,
-    pct:'99.5% Accuracy',
-    origin:'Senior FX Analyst — Big Five Canadian Bank (2023–Present)',
-    used:'WSS, PostEdge, IWS, MCP Project Lead, Multi-currency settlements (15+ currencies)',
-    insight:'Managed high-volume FX settlements and trade reconciliation with near-perfect accuracy at institutional scale.' },
-  { id:1, label:'Process Optimisation',  x:0.38, y:0.14, color:'#4ff8c0', level:0.92,
-    pct:'50% Faster Reconciliation',
-    origin:'MCP Internal Project Lead — Big Five Canadian Bank',
-    used:'Custom Excel tracking systems, SOP development, workflow redesign, team training',
-    insight:'Reduced daily reconciliation from 60 to 30 minutes. SOP programme delivered 30% error reduction in chargeback operations.' },
-  { id:2, label:'Fraud & Risk Analysis', x:0.80, y:0.22, color:'#ff6b47', level:0.95,
-    pct:'99% Accuracy · 20+ Cases/Day',
-    origin:'Fraud Analyst — Big Five Canadian Bank (2022–2023)',
-    used:'PRM, COINS, AML compliance, root cause analysis, audit log maintenance',
-    insight:'Maintained 99% accuracy on high-value fraud cases ($2,000+ threshold) across ATM, online and branch channels.' },
-  { id:3, label:'Visa Pre-Arbitration',  x:0.88, y:0.54, color:'#ff6b47', level:0.90,
-    pct:'30% Error Reduction',
-    origin:'Associate Business Systems Analyst — Big Five Canadian Bank (2019–2022)',
-    used:'ECRM (Salesforce), Visa dispute rules, funds recovery, QA reviews, SOP creation',
-    insight:'Institutional SME for Visa pre-arbitration — built evidence workflows and SOPs that cut operational inconsistencies by 30%.' },
-  { id:4, label:'Scrum & Agile PM',      x:0.50, y:0.80, color:'#7b8fff', level:0.88,
-    pct:'Certified Scrum Master (CSM)',
-    origin:'CSM Certification + IT Project Management PG — Humber College (2017–2018)',
-    used:'Agile sprint frameworks, SDLC, stakeholder management, MCP project delivery',
-    insight:'Applied Scrum velocity and structured delivery to institutional operations — every internal project managed as a sprint.' },
-  { id:5, label:'Systems & Automation',  x:0.25, y:0.76, color:'#7b8fff', level:0.86,
-    pct:'5h+ Saved / Week Per Output',
-    origin:'Recognised after years watching capable teams repeat identical manual steps without improvement',
-    used:'No-code pipelines (Make.com), Excel automation, process mapping, internal tracker architecture',
-    insight:'Identifying manual leaks in institutional and operational systems — then replacing them with documented, repeatable builds.' }
+ { id:0, label:'FX & Trade Ops', x:0.15, y:0.30, color:'#4ff8c0', level:0.98,
+ pct:'99.5% Accuracy',
+ origin:'Senior FX Analyst Big Five Canadian Bank (2023–Present)',
+ used:'WSS, PostEdge, IWS, MCP Project Lead, Multi-currency settlements (15+ currencies)',
+ insight:'Managed high-volume FX settlements and trade reconciliation with near-perfect accuracy at institutional scale.' },
+ { id:1, label:'Process Optimisation', x:0.38, y:0.14, color:'#4ff8c0', level:0.92,
+ pct:'50% Faster Reconciliation',
+ origin:'MCP Internal Project Lead Big Five Canadian Bank',
+ used:'Custom Excel tracking systems, SOP development, workflow redesign, team training',
+ insight:'Reduced daily reconciliation from 60 to 30 minutes. SOP programme delivered 30% error reduction in chargeback operations.' },
+ { id:2, label:'Fraud & Risk Analysis', x:0.80, y:0.22, color:'#ff6b47', level:0.95,
+ pct:'99% Accuracy · 20+ Cases/Day',
+ origin:'Fraud Analyst Big Five Canadian Bank (2022–2023)',
+ used:'PRM, COINS, AML compliance, root cause analysis, audit log maintenance',
+ insight:'Maintained 99% accuracy on high-value fraud cases ($2,000+ threshold) across ATM, online and branch channels.' },
+ { id:3, label:'Visa Pre-Arbitration', x:0.88, y:0.54, color:'#ff6b47', level:0.90,
+ pct:'30% Error Reduction',
+ origin:'Associate Business Systems Analyst Big Five Canadian Bank (2019–2022)',
+ used:'ECRM (Salesforce), Visa dispute rules, funds recovery, QA reviews, SOP creation',
+ insight:'Institutional SME for Visa pre-arbitration built evidence workflows and SOPs that cut operational inconsistencies by 30%.' },
+ { id:4, label:'Scrum & Agile PM', x:0.50, y:0.80, color:'#7b8fff', level:0.88,
+ pct:'Certified Scrum Master (CSM)',
+ origin:'CSM Certification + IT Project Management PG Humber College (2017–2018)',
+ used:'Agile sprint frameworks, SDLC, stakeholder management, MCP project delivery',
+ insight:'Applied Scrum velocity and structured delivery to institutional operations every internal project managed as a sprint.' },
+ { id:5, label:'Systems & Automation', x:0.25, y:0.76, color:'#7b8fff', level:0.86,
+ pct:'5h+ Saved / Week Per Output',
+ origin:'Recognised after years watching capable teams repeat identical manual steps without improvement',
+ used:'No-code pipelines (Make.com), Excel automation, process mapping, internal tracker architecture',
+ insight:'Identifying manual leaks in institutional and operational systems then replacing them with documented, repeatable builds.' }
 ];
 
 var EDGES = [
-  { a:0, b:1, label:'Operations → Efficiency',
-    desc:'Deep FX and trade operations knowledge is what makes process redesign precise — you cannot optimise what you have not fully operated. The MCP project cut reconciliation time by 50% because the problem was understood before any solution was built.' },
-  { a:1, b:5, label:'Documentation → Automation',
-    desc:'Every automation starts as a written process. SOPs created at chargeback and BSA level became the blueprints for tracker builds and pipeline architecture. Process design is the prerequisite — automation is the execution layer.' },
-  { a:2, b:3, label:'Fraud → Resolution',
-    desc:'Fraud detection insight feeds directly into Visa pre-arbitration — understanding how fraud originates informs how disputes are built and won. Both roles operate inside the same institutional risk intelligence loop.' },
-  { a:0, b:4, label:'Volume → Structure',
-    desc:'Managing 15+ currency settlements at institutional volume requires Agile project discipline. The CSM framework brought sprint structure and milestone tracking to what would otherwise be reactive, high-error daily operations.' },
-  { a:1, b:4, label:'Process → Project',
-    desc:'Operational process design and project management reinforce each other: both require scoping constraints, documenting steps, defining done, and building for handover. Georgian co-op and Humber IT PM formalised this connection.' },
-  { a:4, b:5, label:'Agile → Build',
-    desc:'Automation projects are managed using Scrum methodology — sprint planning, backlog, review, retrospective. The MCP tracker and Telegram pipeline were both scoped, iterated, and delivered as structured projects, not ad hoc builds.' },
-  { a:0, b:2, label:'Settlements → Risk',
-    desc:'Trade operations and fraud risk share an underlying analytical logic: both require pattern recognition across high-volume data and rapid, accurate decision-making under institutional pressure.' },
-  { a:3, b:1, label:'Disputes → SOPs',
-    desc:'Visa pre-arbitration experience revealed exactly where inconsistency enters the dispute process — which became the basis for SOPs that cut errors by 30%. Knowing the failure mode precisely is how you design the right fix.' }
+ { a:0, b:1, label:'Operations → Efficiency',
+ desc:'Deep FX and trade operations knowledge is what makes process redesign precise you cannot optimise what you have not fully operated. The MCP project cut reconciliation time by 50% because the problem was understood before any solution was built.' },
+ { a:1, b:5, label:'Documentation → Automation',
+ desc:'Every automation starts as a written process. SOPs created at chargeback and BSA level became the blueprints for tracker builds and pipeline architecture. Process design is the prerequisite automation is the execution layer.' },
+ { a:2, b:3, label:'Fraud → Resolution',
+ desc:'Fraud detection insight feeds directly into Visa pre-arbitration understanding how fraud originates informs how disputes are built and won. Both roles operate inside the same institutional risk intelligence loop.' },
+ { a:0, b:4, label:'Volume → Structure',
+ desc:'Managing 15+ currency settlements at institutional volume requires Agile project discipline. The CSM framework brought sprint structure and milestone tracking to what would otherwise be reactive, high-error daily operations.' },
+ { a:1, b:4, label:'Process → Project',
+ desc:'Operational process design and project management reinforce each other: both require scoping constraints, documenting steps, defining done, and building for handover. Georgian co-op and Humber IT PM formalised this connection.' },
+ { a:4, b:5, label:'Agile → Build',
+ desc:'Automation projects are managed using Scrum methodology sprint planning, backlog, review, retrospective. The MCP tracker and Telegram pipeline were both scoped, iterated, and delivered as structured projects, not ad hoc builds.' },
+ { a:0, b:2, label:'Settlements → Risk',
+ desc:'Trade operations and fraud risk share an underlying analytical logic: both require pattern recognition across high-volume data and rapid, accurate decision-making under institutional pressure.' },
+ { a:3, b:1, label:'Disputes → SOPs',
+ desc:'Visa pre-arbitration experience revealed exactly where inconsistency enters the dispute process which became the basis for SOPs that cut errors by 30%. Knowing the failure mode precisely is how you design the right fix.' }
 ];
 
 // ── CANVAS SETUP ──────────────────────────────────────────────────────────
@@ -688,11 +680,11 @@ var ctx = canvas.getContext('2d');
 var DPR = window.devicePixelRatio || 1;
 
 function resizeCanvas(){
-  var mw = Math.min(900, window.innerWidth - 80);
-  var mh = Math.round(mw * 0.556);
-  canvas.style.width = mw+'px'; canvas.style.height = mh+'px';
-  canvas.width = mw*DPR; canvas.height = mh*DPR;
-  ctx.setTransform(DPR,0,0,DPR,0,0);
+ var mw = Math.min(900, window.innerWidth - 80);
+ var mh = Math.round(mw * 0.556);
+ canvas.style.width = mw+'px'; canvas.style.height = mh+'px';
+ canvas.width = mw*DPR; canvas.height = mh*DPR;
+ ctx.setTransform(DPR,0,0,DPR,0,0);
 }
 resizeCanvas();
 window.addEventListener('resize', resizeCanvas);
@@ -704,11 +696,11 @@ function dispH(){ return canvas.height/DPR; }
 function gp(s){ return {x: s.x*dispW(), y: s.y*dispH()}; }
 
 function getEdge(a,b){
-  for(var i=0;i<EDGES.length;i++){
-    var e=EDGES[i];
-    if((e.a===a&&e.b===b)||(e.a===b&&e.b===a)) return e;
-  }
-  return null;
+ for(var i=0;i<EDGES.length;i++){
+ var e=EDGES[i];
+ if((e.a===a&&e.b===b)||(e.a===b&&e.b===a)) return e;
+ }
+ return null;
 }
 
 function eMid(e){ var f=gp(SK[e.a]),t=gp(SK[e.b]); return {x:(f.x+t.x)/2,y:(f.y+t.y)/2}; }
@@ -716,80 +708,80 @@ function isConn(id){ return selNode ? getEdge(selNode.id,id)!==null : false; }
 
 // ── DRAW ──────────────────────────────────────────────────────────────────
 function draw(){
-  ctx.clearRect(0,0,dispW(),dispH());
-  pulse+=0.02;
+ ctx.clearRect(0,0,dispW(),dispH());
+ pulse+=0.02;
 
-  // edges
-  for(var i=0;i<EDGES.length;i++){
-    var e=EDGES[i];
-    var f=gp(SK[e.a]), t=gp(SK[e.b]);
-    var active = selNode && (selNode.id===e.a || selNode.id===e.b);
-    var isFocus = focusEdge && focusEdge.a===e.a && focusEdge.b===e.b;
-    var alpha = selNode ? (active ? 0.55 : 0.025) : 0.08;
+ // edges
+ for(var i=0;i<EDGES.length;i++){
+ var e=EDGES[i];
+ var f=gp(SK[e.a]), t=gp(SK[e.b]);
+ var active = selNode && (selNode.id===e.a || selNode.id===e.b);
+ var isFocus = focusEdge && focusEdge.a===e.a && focusEdge.b===e.b;
+ var alpha = selNode ? (active ? 0.55 : 0.025) : 0.08;
 
-    ctx.beginPath(); ctx.moveTo(f.x,f.y); ctx.lineTo(t.x,t.y);
-    ctx.strokeStyle = (active ? SK[e.a].color : '#ffffff') + Math.round(alpha*255).toString(16).padStart(2,'0');
-    ctx.lineWidth = isFocus ? 2.5 : active ? 1.5 : 0.7;
-    ctx.stroke();
+ ctx.beginPath(); ctx.moveTo(f.x,f.y); ctx.lineTo(t.x,t.y);
+ ctx.strokeStyle = (active ? SK[e.a].color : '#ffffff') + Math.round(alpha*255).toString(16).padStart(2,'0');
+ ctx.lineWidth = isFocus ? 2.5 : active ? 1.5 : 0.7;
+ ctx.stroke();
 
-    if(active){
-      var tt=(Math.sin(pulse*2+e.a*0.6)+1)/2;
-      var px=f.x+(t.x-f.x)*tt, py=f.y+(t.y-f.y)*tt;
-      ctx.beginPath(); ctx.arc(px,py, isFocus?3.5:2, 0,Math.PI*2);
-      ctx.fillStyle = isFocus ? '#fff' : SK[e.a].color; ctx.fill();
+ if(active){
+ var tt=(Math.sin(pulse*2+e.a*0.6)+1)/2;
+ var px=f.x+(t.x-f.x)*tt, py=f.y+(t.y-f.y)*tt;
+ ctx.beginPath(); ctx.arc(px,py, isFocus?3.5:2, 0,Math.PI*2);
+ ctx.fillStyle = isFocus ? '#fff' : SK[e.a].color; ctx.fill();
 
-      // Edge label pill
-      var mid=eMid(e), lbl=e.label;
-      ctx.font='300 9px DM Mono,monospace';
-      var tw=ctx.measureText(lbl).width+16, th=17;
-      var ex=mid.x-tw/2, ey=mid.y-th/2, rr=3;
-      ctx.fillStyle = isFocus ? 'rgba(8,12,15,0.97)' : 'rgba(8,12,15,0.84)';
-      ctx.strokeStyle = isFocus ? 'rgba(255,255,255,0.4)' : SK[e.a].color+'66';
-      ctx.lineWidth = isFocus ? 1.5 : 1;
-      ctx.beginPath();
-      ctx.moveTo(ex+rr,ey); ctx.lineTo(ex+tw-rr,ey);
-      ctx.quadraticCurveTo(ex+tw,ey,ex+tw,ey+rr);
-      ctx.lineTo(ex+tw,ey+th-rr); ctx.quadraticCurveTo(ex+tw,ey+th,ex+tw-rr,ey+th);
-      ctx.lineTo(ex+rr,ey+th); ctx.quadraticCurveTo(ex,ey+th,ex,ey+th-rr);
-      ctx.lineTo(ex,ey+rr); ctx.quadraticCurveTo(ex,ey,ex+rr,ey);
-      ctx.closePath(); ctx.fill(); ctx.stroke();
-      ctx.fillStyle = isFocus ? '#e8edf2' : SK[e.a].color+'dd';
-      ctx.textAlign='center'; ctx.textBaseline='middle';
-      ctx.fillText(lbl, mid.x, mid.y);
-    }
-  }
+ // Edge label pill
+ var mid=eMid(e), lbl=e.label;
+ ctx.font='300 9px DM Mono,monospace';
+ var tw=ctx.measureText(lbl).width+16, th=17;
+ var ex=mid.x-tw/2, ey=mid.y-th/2, rr=3;
+ ctx.fillStyle = isFocus ? 'rgba(8,12,15,0.97)' : 'rgba(8,12,15,0.84)';
+ ctx.strokeStyle = isFocus ? 'rgba(255,255,255,0.4)' : SK[e.a].color+'66';
+ ctx.lineWidth = isFocus ? 1.5 : 1;
+ ctx.beginPath();
+ ctx.moveTo(ex+rr,ey); ctx.lineTo(ex+tw-rr,ey);
+ ctx.quadraticCurveTo(ex+tw,ey,ex+tw,ey+rr);
+ ctx.lineTo(ex+tw,ey+th-rr); ctx.quadraticCurveTo(ex+tw,ey+th,ex+tw-rr,ey+th);
+ ctx.lineTo(ex+rr,ey+th); ctx.quadraticCurveTo(ex,ey+th,ex,ey+th-rr);
+ ctx.lineTo(ex,ey+rr); ctx.quadraticCurveTo(ex,ey,ex+rr,ey);
+ ctx.closePath(); ctx.fill(); ctx.stroke();
+ ctx.fillStyle = isFocus ? '#e8edf2' : SK[e.a].color+'dd';
+ ctx.textAlign='center'; ctx.textBaseline='middle';
+ ctx.fillText(lbl, mid.x, mid.y);
+ }
+ }
 
-  // nodes
-  for(var j=0;j<SK.length;j++){
-    var s=SK[j]; var p=gp(s);
-    var iS=selNode===s, iH=hovNode===s;
-    var conn=isConn(s.id), dim=selNode&&!iS&&!conn;
-    var r=iS?12:iH?9:7, gr=iS?38:iH?26:18;
+ // nodes
+ for(var j=0;j<SK.length;j++){
+ var s=SK[j]; var p=gp(s);
+ var iS=selNode===s, iH=hovNode===s;
+ var conn=isConn(s.id), dim=selNode&&!iS&&!conn;
+ var r=iS?12:iH?9:7, gr=iS?38:iH?26:18;
 
-    var grd=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,gr);
-    grd.addColorStop(0, s.color+(dim?'0d':iS?'55':'28'));
-    grd.addColorStop(1, s.color+'00');
-    ctx.beginPath(); ctx.arc(p.x,p.y,gr,0,Math.PI*2);
-    ctx.fillStyle=grd; ctx.fill();
+ var grd=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,gr);
+ grd.addColorStop(0, s.color+(dim?'0d':iS?'55':'28'));
+ grd.addColorStop(1, s.color+'00');
+ ctx.beginPath(); ctx.arc(p.x,p.y,gr,0,Math.PI*2);
+ ctx.fillStyle=grd; ctx.fill();
 
-    if(iS){
-      var pr=16+Math.sin(pulse*3)*4;
-      ctx.beginPath(); ctx.arc(p.x,p.y,pr,0,Math.PI*2);
-      ctx.strokeStyle=s.color+'44'; ctx.lineWidth=1; ctx.stroke();
-    }
+ if(iS){
+ var pr=16+Math.sin(pulse*3)*4;
+ ctx.beginPath(); ctx.arc(p.x,p.y,pr,0,Math.PI*2);
+ ctx.strokeStyle=s.color+'44'; ctx.lineWidth=1; ctx.stroke();
+ }
 
-    ctx.beginPath(); ctx.arc(p.x,p.y,r,0,Math.PI*2);
-    ctx.fillStyle = dim ? '#111820' : s.color+(iS?'ff':'cc'); ctx.fill();
-    ctx.beginPath(); ctx.arc(p.x,p.y,r*0.35,0,Math.PI*2);
-    ctx.fillStyle = dim ? '#1a2530' : iS ? '#080c0f' : s.color+'80'; ctx.fill();
+ ctx.beginPath(); ctx.arc(p.x,p.y,r,0,Math.PI*2);
+ ctx.fillStyle = dim ? '#111820' : s.color+(iS?'ff':'cc'); ctx.fill();
+ ctx.beginPath(); ctx.arc(p.x,p.y,r*0.35,0,Math.PI*2);
+ ctx.fillStyle = dim ? '#1a2530' : iS ? '#080c0f' : s.color+'80'; ctx.fill();
 
-    ctx.font=(iS?'600':'400')+' '+(iS?13:11)+'px DM Mono,monospace';
-    ctx.fillStyle = dim ? '#1e2a35' : iS ? s.color : 'rgba(232,237,242,0.65)';
-    ctx.textAlign='center'; ctx.textBaseline='top';
-    ctx.fillText(s.label, p.x, p.y+r+8);
-  }
+ ctx.font=(iS?'600':'400')+' '+(iS?13:11)+'px DM Mono,monospace';
+ ctx.fillStyle = dim ? '#1e2a35' : iS ? s.color : 'rgba(232,237,242,0.65)';
+ ctx.textAlign='center'; ctx.textBaseline='top';
+ ctx.fillText(s.label, p.x, p.y+r+8);
+ }
 
-  requestAnimationFrame(draw);
+ requestAnimationFrame(draw);
 }
 draw();
 
@@ -797,108 +789,108 @@ draw();
 function cxy(e){ var r=canvas.getBoundingClientRect(); return {x:e.clientX-r.left, y:e.clientY-r.top}; }
 
 canvas.addEventListener('mousemove', function(e){
-  var p=cxy(e); hovNode=null;
-  for(var i=0;i<SK.length;i++){
-    var pos=gp(SK[i]);
-    if(Math.hypot(p.x-pos.x,p.y-pos.y)<22){ hovNode=SK[i]; break; }
-  }
-  canvas.style.cursor = hovNode ? 'pointer' : 'default';
+ var p=cxy(e); hovNode=null;
+ for(var i=0;i<SK.length;i++){
+ var pos=gp(SK[i]);
+ if(Math.hypot(p.x-pos.x,p.y-pos.y)<22){ hovNode=SK[i]; break; }
+ }
+ canvas.style.cursor = hovNode ? 'pointer' : 'default';
 });
 
 canvas.addEventListener('click', function(e){
-  var p=cxy(e); var clicked=null;
-  for(var i=0;i<SK.length;i++){
-    var pos=gp(SK[i]);
-    if(Math.hypot(p.x-pos.x,p.y-pos.y)<22){ clicked=SK[i]; break; }
-  }
-  if(clicked){
-    if(selNode===clicked){ closePopup(); return; }
-    selNode=clicked; focusEdge=null;
-    openPopup(selNode);
-  } else {
-    closePopup();
-  }
+ var p=cxy(e); var clicked=null;
+ for(var i=0;i<SK.length;i++){
+ var pos=gp(SK[i]);
+ if(Math.hypot(p.x-pos.x,p.y-pos.y)<22){ clicked=SK[i]; break; }
+ }
+ if(clicked){
+ if(selNode===clicked){ closePopup(); return; }
+ selNode=clicked; focusEdge=null;
+ openPopup(selNode);
+ } else {
+ closePopup();
+ }
 });
 
 // ── POPUP ─────────────────────────────────────────────────────────────────
 function openPopup(s){
-  var popup = document.getElementById('nodePopup');
-  popup.style.borderTopColor = s.color;
-  popup.querySelector('::before'); // trigger
-  popup.style.setProperty('--nc', s.color);
-  popup.querySelector('.np-name').textContent = s.label;
-  popup.querySelector('.np-name').style.color = s.color;
-  popup.querySelector('#npOrigin').textContent = s.origin;
-  popup.querySelector('#npUsed').textContent = s.used;
-  popup.querySelector('#npInsight').textContent = s.insight;
-  popup.querySelector('#npPct').textContent = s.pct;
-  var bar = popup.querySelector('#npBar');
-  bar.style.background = s.color;
-  bar.style.transform = 'scaleX(0)';
-  setTimeout(function(){ bar.style.transform = 'scaleX('+s.level+')'; }, 60);
+ var popup = document.getElementById('nodePopup');
+ popup.style.borderTopColor = s.color;
+ popup.querySelector('::before'); // trigger
+ popup.style.setProperty('--nc', s.color);
+ popup.querySelector('.np-name').textContent = s.label;
+ popup.querySelector('.np-name').style.color = s.color;
+ popup.querySelector('#npOrigin').textContent = s.origin;
+ popup.querySelector('#npUsed').textContent = s.used;
+ popup.querySelector('#npInsight').textContent = s.insight;
+ popup.querySelector('#npPct').textContent = s.pct;
+ var bar = popup.querySelector('#npBar');
+ bar.style.background = s.color;
+ bar.style.transform = 'scaleX(0)';
+ setTimeout(function(){ bar.style.transform = 'scaleX('+s.level+')'; }, 60);
 
-  // Update top accent line colour
-  popup.querySelector(':scope::before') ; // CSS handles it via var
-  // Directly set the pseudo-element via inline style hack: use a real element
-  popup.style.borderTopColor = s.color;
-  popup.style.borderTopWidth = '2px';
+ // Update top accent line colour
+ popup.querySelector(':scope::before') ; // CSS handles it via var
+ // Directly set the pseudo-element via inline style hack: use a real element
+ popup.style.borderTopColor = s.color;
+ popup.style.borderTopWidth = '2px';
 
-  // Build connections
-  var grid = document.getElementById('connGrid');
-  grid.innerHTML = '';
-  for(var k=0;k<EDGES.length;k++){
-    var edge=EDGES[k];
-    if(edge.a!==s.id && edge.b!==s.id) continue;
-    var otherId = edge.a===s.id ? edge.b : edge.a;
-    var other = SK[otherId];
-    var card = document.createElement('div');
-    card.className = 'conn-card';
-    card.innerHTML =
-      '<div class="conn-target" style="color:'+other.color+'">'+other.label+'</div>'+
-      '<div class="conn-lbl" style="color:'+other.color+'aa">'+edge.label+'</div>'+
-      '<div class="conn-desc">'+edge.desc+'</div>';
-    (function(capturedEdge, capturedCard){
-      capturedCard.addEventListener('click', function(){
-        focusEdge = focusEdge===capturedEdge ? null : capturedEdge;
-        document.querySelectorAll('.conn-card').forEach(function(c){ c.classList.remove('act'); });
-        if(focusEdge) capturedCard.classList.add('act');
-      });
-    })(edge, card);
-    grid.appendChild(card);
-  }
+ // Build connections
+ var grid = document.getElementById('connGrid');
+ grid.innerHTML = '';
+ for(var k=0;k<EDGES.length;k++){
+ var edge=EDGES[k];
+ if(edge.a!==s.id && edge.b!==s.id) continue;
+ var otherId = edge.a===s.id ? edge.b : edge.a;
+ var other = SK[otherId];
+ var card = document.createElement('div');
+ card.className = 'conn-card';
+ card.innerHTML =
+ '<div class="conn-target" style="color:'+other.color+'">'+other.label+'</div>'+
+ '<div class="conn-lbl" style="color:'+other.color+'aa">'+edge.label+'</div>'+
+ '<div class="conn-desc">'+edge.desc+'</div>';
+ (function(capturedEdge, capturedCard){
+ capturedCard.addEventListener('click', function(){
+ focusEdge = focusEdge===capturedEdge ? null : capturedEdge;
+ document.querySelectorAll('.conn-card').forEach(function(c){ c.classList.remove('act'); });
+ if(focusEdge) capturedCard.classList.add('act');
+ });
+ })(edge, card);
+ grid.appendChild(card);
+ }
 
-  popup.classList.add('on');
-  // Scroll popup into view
-  setTimeout(function(){ popup.scrollIntoView({behavior:'smooth', block:'nearest'}); }, 100);
+ popup.classList.add('on');
+ // Scroll popup into view
+ setTimeout(function(){ popup.scrollIntoView({behavior:'smooth', block:'nearest'}); }, 100);
 }
 
 function closePopup(){
-  selNode=null; focusEdge=null;
-  document.getElementById('nodePopup').classList.remove('on');
-  document.querySelectorAll('.conn-card').forEach(function(c){ c.classList.remove('act'); });
+ selNode=null; focusEdge=null;
+ document.getElementById('nodePopup').classList.remove('on');
+ document.querySelectorAll('.conn-card').forEach(function(c){ c.classList.remove('act'); });
 }
 
 // ── CONTACT FORM ─────────────────────────────────────────────────────────
 function sendForm(){
-  var name  = document.getElementById('cf-name').value.trim();
-  var email = document.getElementById('cf-email').value.trim();
-  var role  = document.getElementById('cf-role') ? document.getElementById('cf-role').value.trim() : '';
-  var msg   = document.getElementById('cf-msg').value.trim();
+ var name = document.getElementById('cf-name').value.trim();
+ var email = document.getElementById('cf-email').value.trim();
+ var role = document.getElementById('cf-role') ? document.getElementById('cf-role').value.trim() : '';
+ var msg = document.getElementById('cf-msg').value.trim();
 
-  if(!name)  { alert('Please enter your name.'); return; }
-  if(!email || !email.includes('@')){ alert('Please enter a valid email address.'); return; }
-  if(!msg)   { alert('Please enter a message.'); return; }
+ if(!name) { alert('Please enter your name.'); return; }
+ if(!email || !email.includes('@')){ alert('Please enter a valid email address.'); return; }
+ if(!msg) { alert('Please enter a message.'); return; }
 
-  var to  = 'tolulopeadejuwon@gmail.com';
-  var sub = encodeURIComponent((role ? role : 'Recruitment Enquiry') + ' — Tolu Adejuwon');
-  var nl  = '%0A';
-  var bd  = 'Hi Tolu,' + nl + nl + encodeURIComponent(msg) + nl + nl + '---';
-  bd += nl + 'From: '     + encodeURIComponent(name);
-  bd += nl + 'Reply to: ' + encodeURIComponent(email);
-  if(role) bd += nl + 'Role / opportunity: ' + encodeURIComponent(role);
+ var to = 'tolulopeadejuwon@gmail.com';
+ var sub = encodeURIComponent((role ? role : 'Recruitment Enquiry') + ' Tolu Adejuwon');
+ var nl = '%0A';
+ var bd = 'Hi Tolu,' + nl + nl + encodeURIComponent(msg) + nl + nl + '---';
+ bd += nl + 'From: ' + encodeURIComponent(name);
+ bd += nl + 'Reply to: ' + encodeURIComponent(email);
+ if(role) bd += nl + 'Role / opportunity: ' + encodeURIComponent(role);
 
-  window.location.href = 'mailto:' + to + '?subject=' + sub + '&body=' + bd;
-  document.getElementById('cfSuccess').classList.add('show');
+ window.location.href = 'mailto:' + to + '?subject=' + sub + '&body=' + bd;
+ document.getElementById('cfSuccess').classList.add('show');
 }
 
 </script>
