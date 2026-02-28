@@ -28,6 +28,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 48px;display:fl
 .nr a:hover{color:var(--ac)}
 .cvbtn{display:inline-flex;align-items:center;gap:7px;padding:8px 18px;background:var(--ac);color:var(--bg);font-family:var(--fd);font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:background .2s}
 .cvbtn:hover{background:#7fffd4}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;z-index:200}
+.nav-hamburger span{display:block;width:22px;height:2px;background:var(--tx);transition:all .3s}
+.nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-hamburger.open span:nth-child(2){opacity:0}
+.nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
 /* HERO */
 #hero{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;position:relative;overflow:hidden}
@@ -186,9 +191,89 @@ footer{padding:50px 48px;border-top:1px solid var(--bord);display:flex;justify-c
 .cf-note{font-size:10px;color:var(--mu);line-height:1.6;max-width:200px}
 .cf-success{display:none;padding:14px 18px;background:rgba(79,248,192,.06);border:1px solid rgba(79,248,192,.2);color:var(--ac);font-size:12px;line-height:1.6}
 .cf-success.show{display:block}
-@media(max-width:720px){
-  .contact-wrap{grid-template-columns:1fr}
+/* ── RESPONSIVE ─────────────────────────────────────────────────────────── */
+
+/* Tablet — 481px to 900px */
+@media(max-width:900px){
+  section{padding:80px 32px}
+  .about-grid{gap:40px}
+  .tlw{max-width:100%}
+  .np-inner{grid-template-columns:1fr 1fr;padding:22px 24px}
+  .contact-wrap{gap:36px}
+  .hbtns{gap:8px}
+  .hbtn{padding:10px 14px;font-size:10px}
+}
+
+/* Mobile — 480px and below */
+@media(max-width:480px){
+  nav{padding:12px 16px}
+  .nr{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(8,12,15,.97);flex-direction:column;align-items:center;justify-content:center;gap:28px;z-index:150;backdrop-filter:blur(12px)}
+  .nr.open{display:flex}
+  .nr a{font-size:16px;letter-spacing:.12em}
+  .nr .cvbtn{padding:14px 32px;font-size:12px}
+  .nav-hamburger{display:flex}
+  .nl{font-size:11px}
+  section{padding:60px 16px}
+  .sh{margin-bottom:40px}
+
+  /* Hero */
+  .hc{padding:0 16px}
+  .htit{font-size:clamp(32px,10vw,48px);line-height:1.05}
+  .hsub{font-size:13px;max-width:100%}
+  .hbtns{flex-direction:column;align-items:stretch;gap:8px;padding:0 8px}
+  .hbtn{justify-content:center;padding:12px 16px;font-size:11px}
+
+  /* Stats bar */
+  .sbar{flex-direction:column}
+  .stat{border-right:none;border-bottom:1px solid var(--bord);padding:18px 14px}
+  .stat:last-child{border-bottom:none}
+  .sn{font-size:24px}
+
+  /* About */
+  .about-grid{grid-template-columns:1fr;gap:32px}
+  .interest-grid{grid-template-columns:1fr 1fr}
+  .about-bio{font-size:13px}
+
+  /* Timeline */
+  .tll{left:0;display:none}
+  .tc{grid-template-columns:1fr;padding-left:0;gap:0}
+  .tcl{text-align:left;padding-bottom:6px;padding-left:0}
+  .tcdot{display:none}
+  .tctit{font-size:17px}
+  .tcbod{font-size:12px;max-width:100%}
+  .skch{gap:4px}
+  .sk{font-size:8px;padding:2px 7px}
+
+  /* Skill popup */
+  .np-inner{grid-template-columns:1fr;padding:16px}
+  .np-header{flex-direction:column;align-items:flex-start;gap:6px}
+  .np-pct-hero{font-size:14px}
+  .np-insight-box{padding:14px}
+  .conn-grid{grid-template-columns:1fr}
+
+  /* Contact */
+  .contact-wrap{grid-template-columns:1fr;gap:32px}
   .cf-row{grid-template-columns:1fr}
+  .cf-submit{flex-direction:column;align-items:stretch}
+  .cf-btn{text-align:center;justify-content:center}
+  .cf-note{max-width:100%}
+
+  /* Footer */
+  footer{flex-direction:column;text-align:center;padding:36px 16px;gap:24px}
+  .fcta{justify-content:center;flex-wrap:wrap}
+  .fct{font-size:11px}
+}
+
+/* Ensure canvas never overflows */
+#skillCanvas{max-width:100%;height:auto}
+
+/* Touch devices — disable hover-only effects that feel broken */
+@media(hover:none){
+  body{cursor:auto}
+  #cur,#crr{display:none}
+  .hbtn::before{display:none}
+  .hbtn:hover{color:var(--tx)}
+  .pc:hover{transform:none}
 }
 
 /* UTILS */
@@ -201,15 +286,7 @@ footer{padding:50px 48px;border-top:1px solid var(--bord);display:flex;justify-c
 .fn:hover{opacity:1;transform:scale(3);box-shadow:0 0 16px var(--a2)}
 .fmsg{position:fixed;bottom:46px;left:44px;background:var(--surf);border:1px solid var(--a2);padding:12px 15px;font-size:11px;color:var(--a2);max-width:210px;line-height:1.6;opacity:0;pointer-events:none;transition:opacity .3s;z-index:200}
 .fn:hover~.fmsg{opacity:1}
-@media(max-width:720px){
-  nav{padding:12px 16px}.nr{display:none}
-  section{padding:70px 16px}
-  .tll{left:0}.tc{grid-template-columns:1fr;padding-left:20px}.tcl{text-align:left;padding-bottom:6px}.tcdot{right:auto;left:-26px}
-  footer{flex-direction:column;text-align:center}
-  .sbar{flex-direction:column}.stat{border-right:none;border-bottom:1px solid var(--bord)}
-  .about-grid{grid-template-columns:1fr}
-  .np-inner{grid-template-columns:1fr}
-}
+/* mobile nav hamburger handled by @media(max-width:480px) above */
 </style>
 </head>
 <body>
@@ -219,13 +296,16 @@ footer{padding:50px 48px;border-top:1px solid var(--bord);display:flex;justify-c
 
 <nav>
   <div class="nl">Tolu Adejuwon</div>
-  <ul class="nr">
+  <ul class="nr" id="navLinks">
     <li><a href="#about">About</a></li>
     <li><a href="#journey">Journey</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="Tolu_Adejuwon_CV.docx" download class="cvbtn">↓ Download CV</a></li>
   </ul>
+  <button class="nav-hamburger" id="navToggle" aria-label="Toggle navigation">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
 <!-- HERO -->
@@ -456,7 +536,7 @@ footer{padding:50px 48px;border-top:1px solid var(--bord);display:flex;justify-c
     <div class="contact-info">
       <div class="ci-item">
         <div class="ci-label">Email</div>
-        <div class="ci-value"><a href="mailto:tolulopeadejuwon@gmail.com">tolulopeadejuwon@gmail.com</a></div>
+        <div class="ci-value"><a href="/cdn-cgi/l/email-protection#cbbfa4a7bea7a4bbaeaaafaea1bebca4a58baca6aaa2a7e5a8a4a6"><span class="__cf_email__" data-cfemail="c3b7acafb6afacb3a6a2a7a6a9b6b4acad83a4aea2aaafeda0acae">[email&#160;protected]</span></a></div>
       </div>
       <div class="ci-item">
         <div class="ci-label">Phone</div>
@@ -470,7 +550,7 @@ footer{padding:50px 48px;border-top:1px solid var(--bord);display:flex;justify-c
         <div class="ci-label">CV / Resume</div>
         <div class="ci-value"><a href="Tolu_Adejuwon_CV.docx" download>&#8595; Download full CV (.docx)</a></div>
       </div>
-      <p class="ci-note">Response within 24 hours. Happy to speak directly or connect via email— please include the role or organisation in your message.</p>
+      <p class="ci-note">Response within 24 hours. Happy to speak directly or connect via LinkedIn — please include the role or organisation in your message.</p>
     </div>
     <div class="cform">
       <div class="cf-row">
@@ -496,7 +576,7 @@ footer{padding:50px 48px;border-top:1px solid var(--bord);display:flex;justify-c
         <p class="cf-note">Opens your email client with the message pre-filled. No data is stored.</p>
       </div>
       <div class="cf-success" id="cfSuccess">
-        &#10003; Your email client should have opened with the message ready to send. If it did not, email <a href="mailto:tolulopeadejuwon@gmail.com" style="color:var(--ac)">tolulopeadejuwon@gmail.com</a> directly.
+        &#10003; Your email client should have opened with the message ready to send. If it did not, email <a href="/cdn-cgi/l/email-protection#4632292a332a2936232722232c3331292806212b272f2a6825292b" style="color:var(--ac)"><span class="__cf_email__" data-cfemail="14607b7861787b64717570717e61637b7a547379757d783a777b79">[email&#160;protected]</span></a> directly.
       </div>
     </div>
   </div>
@@ -506,7 +586,7 @@ footer{padding:50px 48px;border-top:1px solid var(--bord);display:flex;justify-c
 <footer>
   <div>
     <div class="fnm">Tolulope John Adejuwon</div>
-    <div class="fct">Toronto, ON &nbsp;&middot;&nbsp; <a href="mailto:tolulopeadejuwon@gmail.com">tolulopeadejuwon@gmail.com</a> &nbsp;&middot;&nbsp; <a href="tel:7059704667">705-970-4667</a><br>
+    <div class="fct">Toronto, ON &nbsp;&middot;&nbsp; <a href="/cdn-cgi/l/email-protection#592d36352c3536293c383d3c332c2e3637193e34383035773a3634"><span class="__cf_email__" data-cfemail="63170c0f160f0c13060207060916140c0d23040e020a0f4d000c0e">[email&#160;protected]</span></a> &nbsp;&middot;&nbsp; <a href="tel:7059704667">705-970-4667</a><br>
     CSM &nbsp;&middot;&nbsp; BSc Economics &nbsp;&middot;&nbsp; PG: International Business &amp; IT Project Management</div>
   </div>
   <div class="fcta">
@@ -514,7 +594,25 @@ footer{padding:50px 48px;border-top:1px solid var(--bord);display:flex;justify-c
     <a href="#contact" class="bp">Get In Touch &#8594;</a>
   </div>
 </footer>
+
 <script>
+// ── NAV HAMBURGER ─────────────────────────────────────────────────────────
+var navToggle = document.getElementById('navToggle');
+var navLinks  = document.getElementById('navLinks');
+if(navToggle){
+  navToggle.addEventListener('click', function(){
+    navToggle.classList.toggle('open');
+    navLinks.classList.toggle('open');
+  });
+  navLinks.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      navToggle.classList.remove('open');
+      navLinks.classList.remove('open');
+    });
+  });
+}
+
+
 // ── CURSOR ────────────────────────────────────────────────────────────────
 var cur = document.getElementById('cur'), crr = document.getElementById('crr');
 var mx = 0, my = 0, rx = 0, ry = 0;
@@ -533,40 +631,32 @@ document.querySelectorAll('.rev,.tc').forEach(function(el){ obs.observe(el); });
 
 // ── SKILL DATA (RECRUITER-OPTIMISED) ─────────────────────────────────────
 var SK = [
-  // CLUSTER A: INSTITUTIONAL OPERATIONS
-  { id:0, label:'FX & Trade Ops', x:0.15, y:0.30, color:'#4ff8c0', level:0.98,
+  { id:0, label:'FX & Trade Ops',        x:0.15, y:0.30, color:'#4ff8c0', level:0.98,
     pct:'99.5% Accuracy',
     origin:'Senior FX Analyst — Big Five Canadian Bank (2023–Present)',
     used:'WSS, PostEdge, IWS, MCP Project Lead, Multi-currency settlements (15+ currencies)',
     insight:'Managed high-volume FX settlements and trade reconciliation with near-perfect accuracy at institutional scale.' },
-
-  { id:1, label:'Process Optimization', x:0.38, y:0.14, color:'#4ff8c0', level:0.92,
+  { id:1, label:'Process Optimisation',  x:0.38, y:0.14, color:'#4ff8c0', level:0.92,
     pct:'50% Faster Reconciliation',
     origin:'MCP Internal Project Lead — Big Five Canadian Bank',
     used:'Custom Excel tracking systems, SOP development, workflow redesign, team training',
     insight:'Reduced daily reconciliation from 60 to 30 minutes. SOP programme delivered 30% error reduction in chargeback operations.' },
-
-  // CLUSTER B: RISK & COMPLIANCE
   { id:2, label:'Fraud & Risk Analysis', x:0.80, y:0.22, color:'#ff6b47', level:0.95,
     pct:'99% Accuracy · 20+ Cases/Day',
     origin:'Fraud Analyst — Big Five Canadian Bank (2022–2023)',
     used:'PRM, COINS, AML compliance, root cause analysis, audit log maintenance',
     insight:'Maintained 99% accuracy on high-value fraud cases ($2,000+ threshold) across ATM, online and branch channels.' },
-
-  { id:3, label:'Visa Pre-Arbitration', x:0.88, y:0.54, color:'#ff6b47', level:0.90,
+  { id:3, label:'Visa Pre-Arbitration',  x:0.88, y:0.54, color:'#ff6b47', level:0.90,
     pct:'30% Error Reduction',
     origin:'Associate Business Systems Analyst — Big Five Canadian Bank (2019–2022)',
     used:'ECRM (Salesforce), Visa dispute rules, funds recovery, QA reviews, SOP creation',
     insight:'Institutional SME for Visa pre-arbitration — built evidence workflows and SOPs that cut operational inconsistencies by 30%.' },
-
-  // CLUSTER C: DELIVERY & ARCHITECTURE
-  { id:4, label:'Scrum & Agile PM', x:0.50, y:0.80, color:'#7b8fff', level:0.88,
+  { id:4, label:'Scrum & Agile PM',      x:0.50, y:0.80, color:'#7b8fff', level:0.88,
     pct:'Certified Scrum Master (CSM)',
     origin:'CSM Certification + IT Project Management PG — Humber College (2017–2018)',
     used:'Agile sprint frameworks, SDLC, stakeholder management, MCP project delivery',
     insight:'Applied Scrum velocity and structured delivery to institutional operations — every internal project managed as a sprint.' },
-
-  { id:5, label:'Systems & Automation', x:0.25, y:0.76, color:'#7b8fff', level:0.86,
+  { id:5, label:'Systems & Automation',  x:0.25, y:0.76, color:'#7b8fff', level:0.86,
     pct:'5h+ Saved / Week Per Output',
     origin:'Recognised after years watching capable teams repeat identical manual steps without improvement',
     used:'No-code pipelines (Make.com), Excel automation, process mapping, internal tracker architecture',
@@ -574,144 +664,129 @@ var SK = [
 ];
 
 var EDGES = [
-  { a:0, b:1,
-    label:'Operations → Efficiency',
+  { a:0, b:1, label:'Operations → Efficiency',
     desc:'Deep FX and trade operations knowledge is what makes process redesign precise — you cannot optimise what you have not fully operated. The MCP project cut reconciliation time by 50% because the problem was understood before any solution was built.' },
-  { a:1, b:5,
-    label:'Documentation → Automation',
+  { a:1, b:5, label:'Documentation → Automation',
     desc:'Every automation starts as a written process. SOPs created at chargeback and BSA level became the blueprints for tracker builds and pipeline architecture. Process design is the prerequisite — automation is the execution layer.' },
-  { a:2, b:3,
-    label:'Fraud → Resolution',
+  { a:2, b:3, label:'Fraud → Resolution',
     desc:'Fraud detection insight feeds directly into Visa pre-arbitration — understanding how fraud originates informs how disputes are built and won. Both roles operate inside the same institutional risk intelligence loop.' },
-  { a:0, b:4,
-    label:'Volume → Structure',
+  { a:0, b:4, label:'Volume → Structure',
     desc:'Managing 15+ currency settlements at institutional volume requires Agile project discipline. The CSM framework brought sprint structure and milestone tracking to what would otherwise be reactive, high-error daily operations.' },
-  { a:1, b:4,
-    label:'Process → Project',
+  { a:1, b:4, label:'Process → Project',
     desc:'Operational process design and project management reinforce each other: both require scoping constraints, documenting steps, defining done, and building for handover. Georgian co-op and Humber IT PM formalised this connection.' },
-  { a:4, b:5,
-    label:'Agile → Build',
+  { a:4, b:5, label:'Agile → Build',
     desc:'Automation projects are managed using Scrum methodology — sprint planning, backlog, review, retrospective. The MCP tracker and Telegram pipeline were both scoped, iterated, and delivered as structured projects, not ad hoc builds.' },
-  { a:0, b:2,
-    label:'Settlements → Risk',
+  { a:0, b:2, label:'Settlements → Risk',
     desc:'Trade operations and fraud risk share an underlying analytical logic: both require pattern recognition across high-volume data and rapid, accurate decision-making under institutional pressure.' },
-  { a:3, b:1,
-    label:'Disputes → SOPs',
+  { a:3, b:1, label:'Disputes → SOPs',
     desc:'Visa pre-arbitration experience revealed exactly where inconsistency enters the dispute process — which became the basis for SOPs that cut errors by 30%. Knowing the failure mode precisely is how you design the right fix.' }
 ];
 
-// ── CANVAS ────────────────────────────────────────────────────────────────
+// ── CANVAS SETUP ──────────────────────────────────────────────────────────
 var canvas = document.getElementById('skillCanvas');
-var ctx    = canvas.getContext('2d');
-var DPR    = window.devicePixelRatio || 1;
+var ctx = canvas.getContext('2d');
+var DPR = window.devicePixelRatio || 1;
 
 function resizeCanvas(){
-  var mw = Math.min(900, window.innerWidth - 40);
-  var mh = Math.round(mw * 0.5);
+  var mw = Math.min(900, window.innerWidth - 80);
+  var mh = Math.round(mw * 0.556);
   canvas.style.width = mw+'px'; canvas.style.height = mh+'px';
-  canvas.width  = mw * DPR;
-  canvas.height = mh * DPR;
-  ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+  canvas.width = mw*DPR; canvas.height = mh*DPR;
+  ctx.setTransform(DPR,0,0,DPR,0,0);
 }
 resizeCanvas();
 window.addEventListener('resize', resizeCanvas);
 
 var hovNode=null, selNode=null, focusEdge=null, pulse=0;
 
-function dW(){ return canvas.width  / DPR; }
-function dH(){ return canvas.height / DPR; }
-function gp(s){ return { x: s.x * dW(), y: s.y * dH() }; }
+function dispW(){ return canvas.width/DPR; }
+function dispH(){ return canvas.height/DPR; }
+function gp(s){ return {x: s.x*dispW(), y: s.y*dispH()}; }
 
-function getEdge(a, b){
-  for(var i=0; i<EDGES.length; i++){
-    var e = EDGES[i];
-    if((e.a===a && e.b===b) || (e.a===b && e.b===a)) return e;
+function getEdge(a,b){
+  for(var i=0;i<EDGES.length;i++){
+    var e=EDGES[i];
+    if((e.a===a&&e.b===b)||(e.a===b&&e.b===a)) return e;
   }
   return null;
 }
-function eMid(e){ var f=gp(SK[e.a]), t=gp(SK[e.b]); return { x:(f.x+t.x)/2, y:(f.y+t.y)/2 }; }
-function isConn(id){ return selNode ? getEdge(selNode.id, id) !== null : false; }
 
+function eMid(e){ var f=gp(SK[e.a]),t=gp(SK[e.b]); return {x:(f.x+t.x)/2,y:(f.y+t.y)/2}; }
+function isConn(id){ return selNode ? getEdge(selNode.id,id)!==null : false; }
+
+// ── DRAW ──────────────────────────────────────────────────────────────────
 function draw(){
-  ctx.clearRect(0, 0, dW(), dH());
-  pulse += 0.018;
+  ctx.clearRect(0,0,dispW(),dispH());
+  pulse+=0.02;
 
   // edges
-  for(var i=0; i<EDGES.length; i++){
-    var e = EDGES[i];
-    var f = gp(SK[e.a]), t = gp(SK[e.b]);
-    var active  = selNode && (selNode.id===e.a || selNode.id===e.b);
+  for(var i=0;i<EDGES.length;i++){
+    var e=EDGES[i];
+    var f=gp(SK[e.a]), t=gp(SK[e.b]);
+    var active = selNode && (selNode.id===e.a || selNode.id===e.b);
     var isFocus = focusEdge && focusEdge.a===e.a && focusEdge.b===e.b;
-    var alpha   = selNode ? (active ? 0.55 : 0.022) : 0.07;
+    var alpha = selNode ? (active ? 0.55 : 0.025) : 0.08;
 
-    ctx.beginPath(); ctx.moveTo(f.x, f.y); ctx.lineTo(t.x, t.y);
+    ctx.beginPath(); ctx.moveTo(f.x,f.y); ctx.lineTo(t.x,t.y);
     ctx.strokeStyle = (active ? SK[e.a].color : '#ffffff') + Math.round(alpha*255).toString(16).padStart(2,'0');
-    ctx.lineWidth   = isFocus ? 2.5 : active ? 1.5 : 0.7;
+    ctx.lineWidth = isFocus ? 2.5 : active ? 1.5 : 0.7;
     ctx.stroke();
 
     if(active){
-      var tt  = (Math.sin(pulse*2 + e.a*0.7) + 1) / 2;
-      var ppx = f.x + (t.x-f.x)*tt, ppy = f.y + (t.y-f.y)*tt;
-      ctx.beginPath(); ctx.arc(ppx, ppy, isFocus ? 3.5 : 2, 0, Math.PI*2);
+      var tt=(Math.sin(pulse*2+e.a*0.6)+1)/2;
+      var px=f.x+(t.x-f.x)*tt, py=f.y+(t.y-f.y)*tt;
+      ctx.beginPath(); ctx.arc(px,py, isFocus?3.5:2, 0,Math.PI*2);
       ctx.fillStyle = isFocus ? '#fff' : SK[e.a].color; ctx.fill();
 
-      // edge label pill
-      var mid = eMid(e), lbl = e.label;
-      ctx.font = '300 9px DM Mono,monospace';
-      var tw = ctx.measureText(lbl).width + 16, th = 17;
-      var ex = mid.x - tw/2, ey = mid.y - th/2, rr = 3;
-      ctx.fillStyle   = isFocus ? 'rgba(8,12,15,0.97)' : 'rgba(8,12,15,0.88)';
-      ctx.strokeStyle = isFocus ? 'rgba(255,255,255,0.4)' : SK[e.a].color + '55';
-      ctx.lineWidth   = isFocus ? 1.5 : 1;
+      // Edge label pill
+      var mid=eMid(e), lbl=e.label;
+      ctx.font='300 9px DM Mono,monospace';
+      var tw=ctx.measureText(lbl).width+16, th=17;
+      var ex=mid.x-tw/2, ey=mid.y-th/2, rr=3;
+      ctx.fillStyle = isFocus ? 'rgba(8,12,15,0.97)' : 'rgba(8,12,15,0.84)';
+      ctx.strokeStyle = isFocus ? 'rgba(255,255,255,0.4)' : SK[e.a].color+'66';
+      ctx.lineWidth = isFocus ? 1.5 : 1;
       ctx.beginPath();
-      ctx.moveTo(ex+rr, ey); ctx.lineTo(ex+tw-rr, ey);
-      ctx.quadraticCurveTo(ex+tw, ey, ex+tw, ey+rr);
-      ctx.lineTo(ex+tw, ey+th-rr); ctx.quadraticCurveTo(ex+tw, ey+th, ex+tw-rr, ey+th);
-      ctx.lineTo(ex+rr, ey+th); ctx.quadraticCurveTo(ex, ey+th, ex, ey+th-rr);
-      ctx.lineTo(ex, ey+rr); ctx.quadraticCurveTo(ex, ey, ex+rr, ey);
+      ctx.moveTo(ex+rr,ey); ctx.lineTo(ex+tw-rr,ey);
+      ctx.quadraticCurveTo(ex+tw,ey,ex+tw,ey+rr);
+      ctx.lineTo(ex+tw,ey+th-rr); ctx.quadraticCurveTo(ex+tw,ey+th,ex+tw-rr,ey+th);
+      ctx.lineTo(ex+rr,ey+th); ctx.quadraticCurveTo(ex,ey+th,ex,ey+th-rr);
+      ctx.lineTo(ex,ey+rr); ctx.quadraticCurveTo(ex,ey,ex+rr,ey);
       ctx.closePath(); ctx.fill(); ctx.stroke();
-      ctx.fillStyle = 'rgba(232,237,242,' + (isFocus ? '0.95' : '0.72') + ')';
-      ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+      ctx.fillStyle = isFocus ? '#e8edf2' : SK[e.a].color+'dd';
+      ctx.textAlign='center'; ctx.textBaseline='middle';
       ctx.fillText(lbl, mid.x, mid.y);
     }
   }
 
   // nodes
-  for(var j=0; j<SK.length; j++){
-    var s  = SK[j], p = gp(s);
-    var iS = selNode===s, iH = hovNode===s;
-    var conn = isConn(s.id), dim = selNode && !iS && !conn;
-    var r = iS ? 12 : iH ? 9 : 7;
-    var gr= iS ? 40 : iH ? 28 : 19;
+  for(var j=0;j<SK.length;j++){
+    var s=SK[j]; var p=gp(s);
+    var iS=selNode===s, iH=hovNode===s;
+    var conn=isConn(s.id), dim=selNode&&!iS&&!conn;
+    var r=iS?12:iH?9:7, gr=iS?38:iH?26:18;
 
-    var grd = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, gr);
-    grd.addColorStop(0, s.color + (dim ? '0a' : iS ? '55' : '28'));
-    grd.addColorStop(1, s.color + '00');
-    ctx.beginPath(); ctx.arc(p.x, p.y, gr, 0, Math.PI*2);
-    ctx.fillStyle = grd; ctx.fill();
+    var grd=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,gr);
+    grd.addColorStop(0, s.color+(dim?'0d':iS?'55':'28'));
+    grd.addColorStop(1, s.color+'00');
+    ctx.beginPath(); ctx.arc(p.x,p.y,gr,0,Math.PI*2);
+    ctx.fillStyle=grd; ctx.fill();
 
     if(iS){
-      var pr = 16 + Math.sin(pulse*3) * 4;
-      ctx.beginPath(); ctx.arc(p.x, p.y, pr, 0, Math.PI*2);
-      ctx.strokeStyle = s.color + '44'; ctx.lineWidth = 1; ctx.stroke();
+      var pr=16+Math.sin(pulse*3)*4;
+      ctx.beginPath(); ctx.arc(p.x,p.y,pr,0,Math.PI*2);
+      ctx.strokeStyle=s.color+'44'; ctx.lineWidth=1; ctx.stroke();
     }
 
-    ctx.beginPath(); ctx.arc(p.x, p.y, r, 0, Math.PI*2);
-    ctx.fillStyle = dim ? '#111820' : s.color + (iS ? 'ff' : 'cc'); ctx.fill();
-    ctx.beginPath(); ctx.arc(p.x, p.y, r*0.35, 0, Math.PI*2);
-    ctx.fillStyle = dim ? '#1a2530' : iS ? '#080c0f' : s.color + '80'; ctx.fill();
+    ctx.beginPath(); ctx.arc(p.x,p.y,r,0,Math.PI*2);
+    ctx.fillStyle = dim ? '#111820' : s.color+(iS?'ff':'cc'); ctx.fill();
+    ctx.beginPath(); ctx.arc(p.x,p.y,r*0.35,0,Math.PI*2);
+    ctx.fillStyle = dim ? '#1a2530' : iS ? '#080c0f' : s.color+'80'; ctx.fill();
 
-    // label — split on ' & ' or ' — ' for two-line rendering
-    ctx.font = (iS ? '600' : '400') + ' ' + (iS ? 12 : 10) + 'px DM Mono,monospace';
-    ctx.fillStyle   = dim ? '#1e2a35' : iS ? s.color : 'rgba(232,237,242,0.62)';
-    ctx.textAlign   = 'center';
-    ctx.textBaseline= 'top';
-    var parts = s.label.indexOf(' & ') !== -1
-      ? [s.label.split(' & ')[0]+' &', s.label.split(' & ')[1]]
-      : [s.label];
-    for(var li=0; li<parts.length; li++){
-      ctx.fillText(parts[li], p.x, p.y + r + 7 + li*13);
-    }
+    ctx.font=(iS?'600':'400')+' '+(iS?13:11)+'px DM Mono,monospace';
+    ctx.fillStyle = dim ? '#1e2a35' : iS ? s.color : 'rgba(232,237,242,0.65)';
+    ctx.textAlign='center'; ctx.textBaseline='top';
+    ctx.fillText(s.label, p.x, p.y+r+8);
   }
 
   requestAnimationFrame(draw);
@@ -719,26 +794,26 @@ function draw(){
 draw();
 
 // ── CANVAS EVENTS ─────────────────────────────────────────────────────────
-function cxy(ev){ var r = canvas.getBoundingClientRect(); return { x: ev.clientX-r.left, y: ev.clientY-r.top }; }
+function cxy(e){ var r=canvas.getBoundingClientRect(); return {x:e.clientX-r.left, y:e.clientY-r.top}; }
 
-canvas.addEventListener('mousemove', function(ev){
-  var p = cxy(ev); hovNode = null;
-  for(var i=0; i<SK.length; i++){
-    var pos = gp(SK[i]);
-    if(Math.hypot(p.x-pos.x, p.y-pos.y) < 24){ hovNode = SK[i]; break; }
+canvas.addEventListener('mousemove', function(e){
+  var p=cxy(e); hovNode=null;
+  for(var i=0;i<SK.length;i++){
+    var pos=gp(SK[i]);
+    if(Math.hypot(p.x-pos.x,p.y-pos.y)<22){ hovNode=SK[i]; break; }
   }
   canvas.style.cursor = hovNode ? 'pointer' : 'default';
 });
 
-canvas.addEventListener('click', function(ev){
-  var p = cxy(ev), clicked = null;
-  for(var i=0; i<SK.length; i++){
-    var pos = gp(SK[i]);
-    if(Math.hypot(p.x-pos.x, p.y-pos.y) < 24){ clicked = SK[i]; break; }
+canvas.addEventListener('click', function(e){
+  var p=cxy(e); var clicked=null;
+  for(var i=0;i<SK.length;i++){
+    var pos=gp(SK[i]);
+    if(Math.hypot(p.x-pos.x,p.y-pos.y)<22){ clicked=SK[i]; break; }
   }
   if(clicked){
-    if(selNode === clicked){ closePopup(); return; }
-    selNode = clicked; focusEdge = null;
+    if(selNode===clicked){ closePopup(); return; }
+    selNode=clicked; focusEdge=null;
     openPopup(selNode);
   } else {
     closePopup();
@@ -749,50 +824,56 @@ canvas.addEventListener('click', function(ev){
 function openPopup(s){
   var popup = document.getElementById('nodePopup');
   popup.style.borderTopColor = s.color;
+  popup.querySelector('::before'); // trigger
+  popup.style.setProperty('--nc', s.color);
+  popup.querySelector('.np-name').textContent = s.label;
+  popup.querySelector('.np-name').style.color = s.color;
+  popup.querySelector('#npOrigin').textContent = s.origin;
+  popup.querySelector('#npUsed').textContent = s.used;
+  popup.querySelector('#npInsight').textContent = s.insight;
+  popup.querySelector('#npPct').textContent = s.pct;
+  var bar = popup.querySelector('#npBar');
+  bar.style.background = s.color;
+  bar.style.transform = 'scaleX(0)';
+  setTimeout(function(){ bar.style.transform = 'scaleX('+s.level+')'; }, 60);
+
+  // Update top accent line colour
+  popup.querySelector(':scope::before') ; // CSS handles it via var
+  // Directly set the pseudo-element via inline style hack: use a real element
+  popup.style.borderTopColor = s.color;
   popup.style.borderTopWidth = '2px';
 
-  document.getElementById('npName').textContent    = s.label;
-  document.getElementById('npName').style.color    = s.color;
-  document.getElementById('npOrigin').textContent  = s.origin;
-  document.getElementById('npUsed').textContent    = s.used;
-  document.getElementById('npInsight').textContent = s.insight;
-  document.getElementById('npPct').textContent     = s.pct;
-
-  var bar = document.getElementById('npBar');
-  bar.style.background = s.color;
-  bar.style.width      = '0%';
-  setTimeout(function(){ bar.style.width = (s.level * 100) + '%'; }, 60);
-
-  // Build connection cards
+  // Build connections
   var grid = document.getElementById('connGrid');
   grid.innerHTML = '';
-  for(var k=0; k<EDGES.length; k++){
-    var edge = EDGES[k];
-    if(edge.a !== s.id && edge.b !== s.id) continue;
-    var otherId = edge.a === s.id ? edge.b : edge.a;
-    var other   = SK[otherId];
-    var card    = document.createElement('div');
+  for(var k=0;k<EDGES.length;k++){
+    var edge=EDGES[k];
+    if(edge.a!==s.id && edge.b!==s.id) continue;
+    var otherId = edge.a===s.id ? edge.b : edge.a;
+    var other = SK[otherId];
+    var card = document.createElement('div');
     card.className = 'conn-card';
     card.innerHTML =
-      '<div class="conn-target" style="color:' + other.color + '">' + other.label + '</div>' +
-      '<div class="conn-lbl"   style="color:' + other.color + '99">' + edge.label + '</div>' +
-      '<div class="conn-desc">'                                       + edge.desc  + '</div>';
-    (function(ce, cc){
-      cc.addEventListener('click', function(){
-        focusEdge = (focusEdge === ce) ? null : ce;
+      '<div class="conn-target" style="color:'+other.color+'">'+other.label+'</div>'+
+      '<div class="conn-lbl" style="color:'+other.color+'aa">'+edge.label+'</div>'+
+      '<div class="conn-desc">'+edge.desc+'</div>';
+    (function(capturedEdge, capturedCard){
+      capturedCard.addEventListener('click', function(){
+        focusEdge = focusEdge===capturedEdge ? null : capturedEdge;
         document.querySelectorAll('.conn-card').forEach(function(c){ c.classList.remove('act'); });
-        if(focusEdge) cc.classList.add('act');
+        if(focusEdge) capturedCard.classList.add('act');
       });
     })(edge, card);
     grid.appendChild(card);
   }
 
   popup.classList.add('on');
-  setTimeout(function(){ popup.scrollIntoView({ behavior:'smooth', block:'nearest' }); }, 100);
+  // Scroll popup into view
+  setTimeout(function(){ popup.scrollIntoView({behavior:'smooth', block:'nearest'}); }, 100);
 }
 
 function closePopup(){
-  selNode = null; focusEdge = null;
+  selNode=null; focusEdge=null;
   document.getElementById('nodePopup').classList.remove('on');
   document.querySelectorAll('.conn-card').forEach(function(c){ c.classList.remove('act'); });
 }
@@ -801,7 +882,7 @@ function closePopup(){
 function sendForm(){
   var name  = document.getElementById('cf-name').value.trim();
   var email = document.getElementById('cf-email').value.trim();
-  var role  = document.getElementById('cf-role')  ? document.getElementById('cf-role').value.trim()  : '';
+  var role  = document.getElementById('cf-role') ? document.getElementById('cf-role').value.trim() : '';
   var msg   = document.getElementById('cf-msg').value.trim();
 
   if(!name)  { alert('Please enter your name.'); return; }
@@ -819,6 +900,7 @@ function sendForm(){
   window.location.href = 'mailto:' + to + '?subject=' + sub + '&body=' + bd;
   document.getElementById('cfSuccess').classList.add('show');
 }
+
 </script>
 </body>
 </html>
