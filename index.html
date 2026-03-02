@@ -14,6 +14,12 @@
  --fd:'Syne',sans-serif;--fm:'DM Mono',monospace;
 }
 html{scroll-behavior:smooth}
+/* BACK TO TOP */
+#back-to-top{position:fixed;bottom:32px;right:28px;width:42px;height:42px;background:var(--ac);color:var(--bg);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:18px;opacity:0;pointer-events:none;transition:opacity .3s,transform .3s;z-index:500;transform:translateY(8px)}
+#back-to-top.visible{opacity:1;pointer-events:auto;transform:translateY(0)}
+#back-to-top:hover{background:#7fffd4;transform:translateY(-2px)}
+@media print{#back-to-top{display:none!important}}
+
 /* SCROLL PROGRESS */
 #scroll-progress{position:fixed;top:0;left:0;height:2px;width:0%;background:var(--ac);z-index:9999;transition:width .1s linear;pointer-events:none}
 
@@ -221,7 +227,10 @@ footer{padding:50px 48px;border-top:1px solid var(--bord);display:flex;justify-c
 
  /* Hero */
  .hc{padding:0 16px}
- .htit{font-size:clamp(32px,10vw,48px);line-height:1.05}
+ .htag{display:none}
+ .htit{font-size:clamp(30px,9.5vw,46px);line-height:1.05}
+ .htit div{display:block}
+ .htit span{display:inline}
  .hsub{font-size:13px;max-width:100%}
  .hbtns{flex-direction:column;align-items:stretch;gap:8px;padding:0 8px}
  .hbtn{justify-content:center;padding:12px 16px;font-size:11px}
@@ -246,6 +255,9 @@ footer{padding:50px 48px;border-top:1px solid var(--bord);display:flex;justify-c
  .tcbod{font-size:12px;max-width:100%}
  .skch{gap:4px}
  .sk{font-size:8px;padding:2px 7px}
+
+ /* Canvas */
+ #skills{padding-left:8px;padding-right:8px}
 
  /* Skill popup */
  .np-inner{grid-template-columns:1fr;padding:16px}
@@ -394,6 +406,7 @@ footer{padding:50px 48px;border-top:1px solid var(--bord);display:flex;justify-c
 </head>
 <body>
 <div id="scroll-progress"></div>
+<button id="back-to-top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8593;</button>
 <div id="cur"></div><div id="crr"></div>
 <div class="fn"></div>
 <div class="fmsg">🎮 Easter egg found.<br>You look under the surface that's exactly how I approach every system.</div>
@@ -421,7 +434,7 @@ footer{padding:50px 48px;border-top:1px solid var(--bord);display:flex;justify-c
  <div style="position:absolute;width:2px;height:2px;background:var(--a4);opacity:.5;top:38%;left:72%;border-radius:50%;animation:flt 16s linear infinite;animation-delay:-4s"></div>
  <div class="hc">
  <div class="htag">✦ Financial Operations · FX & Trade Ops · Process Design · Scrum · Toronto, ON</div>
- <h1 class="htit"><div>Financial Systems</div><div class="a">&amp; Operations</div><div class="d">Specialist.</div></h1>
+ <h1 class="htit"><div>Financial Systems</div><div><span class="a">&amp; Process </span><span class="d">Specialist.</span></div></h1>
  <p class="hsub">7+ years building and optimising the operational infrastructure inside a Big Five Canadian Bank. Four progressive roles. 99.5% payment accuracy. Processes redesigned to run without manual intervention.</p>
  <div class="hbtns">
  <a href="#about" class="hbtn b1"><span class="hi">👤</span><span>About Me</span></a>
@@ -810,12 +823,18 @@ footer{padding:50px 48px;border-top:1px solid var(--bord);display:flex;justify-c
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 
 <script>
-// ── SCROLL PROGRESS ───────────────────────────────────────────────────────
+
+// ── SCROLL PROGRESS + BACK TO TOP ─────────────────────────────────────────
 var scrollBar = document.getElementById('scroll-progress');
+var btt       = document.getElementById('back-to-top');
 window.addEventListener('scroll', function(){
   var scrolled = document.documentElement.scrollTop;
   var total    = document.documentElement.scrollHeight - document.documentElement.clientHeight;
   if(scrollBar) scrollBar.style.width = (total > 0 ? (scrolled/total)*100 : 0) + '%';
+  if(btt){
+    if(scrolled > 400){ btt.classList.add('visible'); }
+    else { btt.classList.remove('visible'); }
+  }
 }, {passive:true});
 
 // ── NAV HAMBURGER ─────────────────────────────────────────────────────────
@@ -851,24 +870,24 @@ var obs = new IntersectionObserver(function(entries){
 }, {threshold:0.06});
 document.querySelectorAll('.rev,.tc').forEach(function(el){ obs.observe(el); });
 
-// ── SKILL DATA (RECRUITER-OPTIMISED) ─────────────────────────────────────
+// ── SKILL DATA ───────────────────────────────────────────────────────────
 var SK = [
-  { id:0, label:'FX & Trade Ops',        x:0.15, y:0.30, color:'#4ff8c0', level:0.98,
+  { id:0, label:'FX & Trade Ops',        x:0.15, y:0.28, color:'#4ff8c0', level:0.98,
     pct:'99.5% Accuracy',
     origin:'Senior FX Analyst, Big Five Canadian Bank (2023 to Present)',
     used:'WSS, PostEdge, IWS, MCP Project Lead, Multi-currency settlements (15+ currencies)',
     insight:'Managed high-volume FX settlements and trade reconciliation with near-perfect accuracy at institutional scale.' },
-  { id:1, label:'Process Optimisation',  x:0.38, y:0.14, color:'#4ff8c0', level:0.92,
+  { id:1, label:'Process Optimisation',  x:0.38, y:0.12, color:'#4ff8c0', level:0.92,
     pct:'50% Faster Reconciliation',
     origin:'MCP Internal Project Lead, Big Five Canadian Bank',
     used:'Custom Excel tracking systems, SOP development, workflow redesign, team training',
     insight:'Reduced daily reconciliation from 60 to 30 minutes. SOP programme delivered 30% error reduction in chargeback operations.' },
-  { id:2, label:'Fraud & Risk Analysis', x:0.80, y:0.22, color:'#ff6b47', level:0.95,
+  { id:2, label:'Fraud & Risk Analysis', x:0.75, y:0.20, color:'#ff6b47', level:0.95,
     pct:'99% Accuracy, 20+ Cases/Day',
     origin:'Fraud Analyst, Big Five Canadian Bank (2022 to 2023)',
     used:'PRM, COINS, AML compliance, root cause analysis, audit log maintenance',
     insight:'Maintained 99% accuracy on high-value fraud cases ($2,000+ threshold) across ATM, online and branch channels.' },
-  { id:3, label:'Visa Pre-Arbitration',  x:0.88, y:0.54, color:'#ff6b47', level:0.90,
+  { id:3, label:'Visa Pre-Arbitration',  x:0.78, y:0.55, color:'#ff6b47', level:0.90,
     pct:'30% Error Reduction',
     origin:'Associate Business Systems Analyst, Big Five Canadian Bank (2019 to 2022)',
     used:'ECRM (Salesforce), Visa dispute rules, funds recovery, QA reviews, SOP creation',
@@ -878,7 +897,7 @@ var SK = [
     origin:'CSM Certification and IT Project Management PG, Humber College (2017 to 2018)',
     used:'Agile sprint frameworks, SDLC, stakeholder management, MCP project delivery',
     insight:'Applied Scrum velocity and structured delivery to institutional operations. Every internal project managed as a sprint.' },
-  { id:5, label:'Systems & Automation',  x:0.25, y:0.76, color:'#7b8fff', level:0.86,
+  { id:5, label:'Systems & Automation',  x:0.22, y:0.76, color:'#7b8fff', level:0.86,
     pct:'5h+ Saved / Week Per Output',
     origin:'Recognised after years watching capable teams repeat identical manual steps without improvement',
     used:'No-code pipelines (Make.com), Excel automation, process mapping, internal tracker architecture',
@@ -910,8 +929,11 @@ var ctx = canvas.getContext('2d');
 var DPR = window.devicePixelRatio || 1;
 
 function resizeCanvas(){
-  var mw = Math.min(900, window.innerWidth - 80);
-  var mh = Math.round(mw * 0.556);
+  var isMobile = window.innerWidth <= 480;
+  var pad   = isMobile ? 24 : 80;
+  var ratio = isMobile ? 0.85 : 0.556;
+  var mw = Math.min(900, window.innerWidth - pad);
+  var mh = Math.round(mw * ratio);
   canvas.style.width = mw+'px'; canvas.style.height = mh+'px';
   canvas.width = mw*DPR; canvas.height = mh*DPR;
   ctx.setTransform(DPR,0,0,DPR,0,0);
@@ -923,7 +945,15 @@ var hovNode=null, selNode=null, focusEdge=null, pulse=0;
 
 function dispW(){ return canvas.width/DPR; }
 function dispH(){ return canvas.height/DPR; }
-function gp(s){ return {x: s.x*dispW(), y: s.y*dispH()}; }
+function gp(s){
+  var x = s.x, y = s.y;
+  if(window.innerWidth <= 480){
+    var ep = 0.10;
+    x = Math.min(Math.max(x, ep), 1 - ep);
+    y = 0.05 + y * 0.90;
+  }
+  return {x: x*dispW(), y: y*dispH()};
+}
 
 function getEdge(a,b){
   for(var i=0;i<EDGES.length;i++){
@@ -1115,55 +1145,43 @@ function sendForm(){
   var bd  = 'Hi Tolu,' + nl + nl + encodeURIComponent(msg) + nl + nl + '---';
   bd += nl + 'From: '     + encodeURIComponent(name);
   bd += nl + 'Reply to: ' + encodeURIComponent(email);
-  if(role) bd += nl + 'Role / opportunity: ' + encodeURIComponent(role);
+  if(role) bd += nl + 'Role: ' + encodeURIComponent(role);
   window.location.href = 'mailto:' + to + '?subject=' + sub + '&body=' + bd;
   document.getElementById('cfSuccess').classList.add('show');
 }
 
-// ── TOUCH SUPPORT FOR SKILL GRAPH ────────────────────────────────────────
+// ── TOUCH SUPPORT ────────────────────────────────────────────────────────
 function txy(e){
   var t = e.touches[0] || e.changedTouches[0];
   var r = canvas.getBoundingClientRect();
   return {x: t.clientX - r.left, y: t.clientY - r.top};
 }
-var touchStartNode = null;
 var touchMoved = false;
-
 canvas.addEventListener('touchstart', function(e){
   touchMoved = false;
-  var p = txy(e); touchStartNode = null;
-  for(var i=0; i<SK.length; i++){
-    var pos = gp(SK[i]);
-    if(Math.hypot(p.x-pos.x, p.y-pos.y) < 32){
-      touchStartNode = SK[i];
-      hovNode = SK[i];
-      break;
-    }
+  var p = txy(e);
+  for(var i=0;i<SK.length;i++){
+    var pos=gp(SK[i]);
+    if(Math.hypot(p.x-pos.x,p.y-pos.y)<32){ hovNode=SK[i]; break; }
   }
-}, {passive:true});
-
-canvas.addEventListener('touchmove', function(e){
-  touchMoved = true;
-  hovNode = null;
-}, {passive:true});
-
+},{passive:true});
+canvas.addEventListener('touchmove',  function(){ touchMoved=true; hovNode=null; },{passive:true});
 canvas.addEventListener('touchend', function(e){
-  if(touchMoved){ hovNode = null; return; }
-  var p = txy(e); var tapped = null;
-  for(var i=0; i<SK.length; i++){
-    var pos = gp(SK[i]);
-    if(Math.hypot(p.x-pos.x, p.y-pos.y) < 32){ tapped = SK[i]; break; }
+  if(touchMoved){ hovNode=null; return; }
+  var p=txy(e); var tapped=null;
+  for(var i=0;i<SK.length;i++){
+    var pos=gp(SK[i]);
+    if(Math.hypot(p.x-pos.x,p.y-pos.y)<32){ tapped=SK[i]; break; }
   }
-  hovNode = null;
+  hovNode=null;
   if(tapped){
     e.preventDefault();
-    if(selNode === tapped){ closePopup(); return; }
-    selNode = tapped; focusEdge = null;
-    openPopup(selNode);
-  } else {
-    closePopup();
-  }
-}, {passive:false});
+    if(selNode===tapped){ closePopup(); return; }
+    selNode=tapped; focusEdge=null; openPopup(selNode);
+  } else { closePopup(); }
+},{passive:false});
+
+
 
 </script>
 </body>
